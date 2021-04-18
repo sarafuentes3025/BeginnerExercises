@@ -15,7 +15,7 @@ public class Main {
     Scanner scan = new Scanner(System.in);
     Average student = new Average();
 
-    for(int i = 0; i < 7; i++){
+    for (int i = 0; i < 7; i++) {
       System.out.println("Type in a grade " + i + ":");
       grades[i] = scan.nextDouble();
     }

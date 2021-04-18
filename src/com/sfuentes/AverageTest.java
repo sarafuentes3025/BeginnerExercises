@@ -10,7 +10,7 @@ public class AverageTest {
 
   public static void calculateAverageStudent_averageIsCorrect() {
     Average correct = new Average();
-    double[] grades = {8,8,8,8,8,8,8};
+    double[] grades = {8, 8, 8, 8, 8, 8, 8};
     double result = correct.calculateAverageStudent(grades);
     System.out.println("Test case 1 Calculated average is correct: \n\t" +
         "Expected result: 8 \n\t" +
@@ -24,9 +24,9 @@ public class AverageTest {
 
   public static void calculateAverageStudent_decimals() {
     Average decimal = new Average();
-    double[] grades = {5.5,9.1,7.5,8,8,8,8.3};
+    double[] grades = {5.5, 9.1, 7.5, 8, 8, 8, 8.3};
     double result = decimal.calculateAverageStudent(grades);
-    result = Math.round(result*100.0)/100.0;
+    result = Math.round(result * 100.0) / 100.0;
     System.out.println("Test case 2 Calculated average is correct with decimals: \n\t" +
         "Expected result: 7.77 \n\t" +
         "Obtained result: " + result);
@@ -36,9 +36,6 @@ public class AverageTest {
       System.out.println("\tTest failed.");
     }
   }
-
-
-
 
 
 }
