@@ -24,7 +24,7 @@ public class AverageTest {
 
   public static void calculateAverageStudent_decimals() {
     Average decimal = new Average();
-    double[] grades = {9,9,9,9,9,9,5.5};
+    double[] grades = {9, 9, 9, 9, 9, 9, 5.5};
     double result = decimal.calculateAverageStudent(grades);
     System.out.println("Test case 2 Calculated average is correct with decimals: \n\t" +
         "Expected result: 8.5 \n\t" +
