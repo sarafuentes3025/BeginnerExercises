@@ -9,9 +9,8 @@ public class OnlyPositive {
     int i = 0;
 
     for (double number : numbers)
-      if (number > 0) {
+      if (number > 0)
         positives.add(number);
-      }
     return positives;
   }
 }
