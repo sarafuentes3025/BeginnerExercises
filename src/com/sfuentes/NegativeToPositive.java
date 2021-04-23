@@ -8,7 +8,7 @@ public class NegativeToPositive {
     ArrayList<Double> positives = new ArrayList<>();
     for (double number : numbers) {
       if (number < 0)
-        number = number * (-1);
+        number = number * -1;
       positives.add(number);
     }
     return positives;
