@@ -14,12 +14,12 @@ public class AverageTest {
     double result = correct.calculateAverageStudent(grades);
     System.out.println("Test case 1 Calculated average is correct: \n\t" +
         "Expected result: 8 \n\t" +
-        "Obtained result: " + result);
-    if (result == 8) {
+        "Actual result: " + result);
+    if (result == 8)
       System.out.println("\tSuccessful test.");
-    } else {
+    else
       System.out.println("\tTest failed.");
-    }
+
   }
 
   public static void calculateAverageStudent_decimals() {
@@ -28,12 +28,12 @@ public class AverageTest {
     double result = decimal.calculateAverageStudent(grades);
     System.out.println("Test case 2 Calculated average is correct with decimals: \n\t" +
         "Expected result: 8.5 \n\t" +
-        "Obtained result: " + result);
-    if (result == 8.5) {
+        "Actual result: " + result);
+    if (result == 8.5)
       System.out.println("\tSuccessful test.");
-    } else {
+    else
       System.out.println("\tTest failed.");
-    }
+
   }
 
 
