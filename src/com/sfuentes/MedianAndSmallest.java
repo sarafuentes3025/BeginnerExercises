@@ -2,20 +2,17 @@ package com.sfuentes;
 
 public class MedianAndSmallest {
 
-  public double CalculateSmallest(double[] grades) {
+  public double calculateSmallest(double[] grades) {
+    double smallest = grades[0];
     for (int i = 0; i < grades.length - 1; i++) {
-      for (int j = i + 1; j < grades.length; j++) {
-        if (grades[i] > grades[j]) {
-          double temporal = grades[i];
-          grades[i] = grades[j];
-          grades[j] = temporal;
-        }
+      if (grades[i] < smallest) {
+        smallest = grades[i];
       }
     }
-    return grades[0];
+    return smallest;
   }
 
-  public double CalculateMedian(double[] grades) {
+  public double calculateAverage(double[] grades) {
     double total = 0;
     for (double grade : grades)
       total += grade;

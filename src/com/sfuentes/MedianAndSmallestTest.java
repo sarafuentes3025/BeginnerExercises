@@ -5,20 +5,20 @@ import java.util.Arrays;
 public class MedianAndSmallestTest {
   public static void main(String[] args) {
 
-    CalculateSmallest_Decimal();
-    CalculateSmallest_SameNumbers();
-    CalculateSmallest_Zero();
-    CalculateMedian_Decimal();
-    CalculateMedian_SameNumbers();
-    CalculateMedian_Zero();
+    calculateSmallest_Decimal();
+    calculateSmallest_SameNumbers();
+    calculateSmallest_Zero();
+    calculateMedian_Decimal();
+    calculateMedian_SameNumbers();
+    calculateMedian_Zero();
 
   }
 
   // Smallest Tests
-  public static void CalculateSmallest_Decimal() {
+  public static void calculateSmallest_Decimal() {
     MedianAndSmallest smallest = new MedianAndSmallest();
     double[] grades = {9.5, 7.6, 8.7, 10.8, 5.9, 9.1};
-    double result = smallest.CalculateSmallest(grades);
+    double result = smallest.calculateSmallest(grades);
 
     System.out.println("Test case 1: Test with decimal numbers: \n\t" +
         "Test numbers: " + Arrays.toString(grades) +
@@ -30,10 +30,10 @@ public class MedianAndSmallestTest {
       System.out.println("\tTest failed.");
   }
 
-  public static void CalculateSmallest_SameNumbers() {
+  public static void calculateSmallest_SameNumbers() {
     MedianAndSmallest smallest = new MedianAndSmallest();
     double[] grades = {9.5, 9.5, 9.5, 9.5, 9.5, 9.5};
-    double result = smallest.CalculateSmallest(grades);
+    double result = smallest.calculateSmallest(grades);
 
     System.out.println("Test case 2: Test with the same numbers: \n\t" +
         "Test numbers: " + Arrays.toString(grades) +
@@ -45,10 +45,10 @@ public class MedianAndSmallestTest {
       System.out.println("\tTest failed.");
   }
 
-  public static void CalculateSmallest_Zero() {
+  public static void calculateSmallest_Zero() {
     MedianAndSmallest smallest = new MedianAndSmallest();
     double[] grades = {0.0, 0.0, 0.0, 0.0};
-    double result = smallest.CalculateSmallest(grades);
+    double result = smallest.calculateSmallest(grades);
 
     System.out.println("Test case 3: Test with all zero number: \n\t" +
         "Test numbers: " + Arrays.toString(grades) +
@@ -61,10 +61,10 @@ public class MedianAndSmallestTest {
   }
 
   // Medium Tests
-  public static void CalculateMedian_Decimal() {
+  public static void calculateMedian_Decimal() {
     MedianAndSmallest median = new MedianAndSmallest();
     double[] grades = {3.1, 7.2, 5.3, 13.4, 20.5, 23.6, 39.7, 23.8, 40.9, 23.1, 14.2, 12.3, 56.4, 23.5, 29.6};
-    double result = median.CalculateMedian(grades);
+    double result = median.calculateAverage(grades);
 
     System.out.println("Test case 1: Test with decimal numbers: \n\t" +
         "Test numbers: " + Arrays.toString(grades) +
@@ -76,10 +76,10 @@ public class MedianAndSmallestTest {
       System.out.println("\tTest failed.");
   }
 
-  public static void CalculateMedian_SameNumbers() {
+  public static void calculateMedian_SameNumbers() {
     MedianAndSmallest median = new MedianAndSmallest();
     double[] grades = {3.1, 3.1, 3.1, 3.1, 3.1, 3.1};
-    double result = median.CalculateMedian(grades);
+    double result = median.calculateAverage(grades);
 
     System.out.println("Test case 2: Test with the same numbers: \n\t" +
         "Test numbers: " + Arrays.toString(grades) +
@@ -91,10 +91,10 @@ public class MedianAndSmallestTest {
       System.out.println("\tTest failed.");
   }
 
-  public static void CalculateMedian_Zero() {
+  public static void calculateMedian_Zero() {
     MedianAndSmallest median = new MedianAndSmallest();
     double[] grades = {0.0, 0.0, 0.0, 0.0};
-    double result = median.CalculateMedian(grades);
+    double result = median.calculateAverage(grades);
 
     System.out.println("Test case 2: Test with all zero number: \n\t" +
         "Test numbers: " + Arrays.toString(grades) +
