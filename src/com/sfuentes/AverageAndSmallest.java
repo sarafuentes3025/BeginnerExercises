@@ -1,10 +1,10 @@
 package com.sfuentes;
 
-public class MedianAndSmallest {
+public class AverageAndSmallest {
 
   public double calculateSmallest(double[] grades) {
     double smallest = grades[0];
-    for (int i = 0; i < grades.length - 1; i++) {
+    for (int i = 0; i < grades.length; i++) {
       if (grades[i] < smallest) {
         smallest = grades[i];
       }
@@ -13,11 +13,11 @@ public class MedianAndSmallest {
   }
 
   public double calculateAverage(double[] grades) {
-    double total = 0;
+    double average = 0;
     for (double grade : grades)
-      total += grade;
+      average += grade;
 
-    return total / grades.length;
+    return average / grades.length;
   }
 }
 
