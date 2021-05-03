@@ -42,7 +42,7 @@ public class DigitalClockTest {
         found = false;
     }
     System.out.println("Test case 2: Test that the minute exists: : \n\t" +
-        "Test hour: 0:0:0 \n\tExpected result: true \n" +
+        "Test hour: 1:59:0 \n\tExpected result: true \n" +
         "\tActual result: " + found);
 
     System.out.println(found ? "\tSUCCESSFUL TEST." : "\tTEST FAILED.");
@@ -54,14 +54,14 @@ public class DigitalClockTest {
     boolean found = true;
 
     for (String result : actualResult) {
-      if (result.equals("1:59:0")) {
+      if (result.equals("1:0:59")) {
         found = true;
         break;
       } else
         found = false;
     }
     System.out.println("Test case 3: Test that the seconds exists: : \n\t" +
-        "Test hour: 0:0:0 \n\tExpected result: true \n" +
+        "Test hour: 1:0:59 \n\tExpected result: true \n" +
         "\tActual result: " + found);
 
     System.out.println(found ? "\tSUCCESSFUL TEST." : "\tTEST FAILED.");
@@ -80,7 +80,7 @@ public class DigitalClockTest {
         found = false;
     }
     System.out.println("Test case 4: Test the last hour: \n\t" +
-        "Test hour: 0:0:0 \n\tExpected result: true \n" +
+        "Test hour: 23:59:59 \n\tExpected result: true \n" +
         "\tActual result: " + found);
 
     System.out.println(found ? "\tSUCCESSFUL TEST." : "\tTEST FAILED.");
