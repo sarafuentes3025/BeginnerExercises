@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class DigitalClock {
 
-  public static ArrayList<String> generateHours() {
+  public ArrayList<String> generateHours() {
     ArrayList<String> time = new ArrayList<>();
 
     for (int hour = 0; hour < 24; hour++) {
