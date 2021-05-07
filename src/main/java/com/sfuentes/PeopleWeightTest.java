@@ -1,7 +1,6 @@
 package com.sfuentes;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class PeopleWeightTest {
 
