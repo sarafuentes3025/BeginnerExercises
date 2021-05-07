@@ -25,7 +25,7 @@ public class PeopleWeightTest {
         };
     int actualResult = categories.generateWeightAverage(agesWeight).size();
 
-    System.out.println("Test case 4: Calculate size categories: \n\t" +
+    System.out.println("Test case 1: Calculate size categories: \n\t" +
         "Expected result:" + expectedResult + " \n\t" +
         "Actual result: " + actualResult);
     if (expectedResult == actualResult)
@@ -48,7 +48,7 @@ public class PeopleWeightTest {
     ArrayList<String> arrayLists = categories.generateWeightAverage(agesWeights);
     String actualResult = arrayLists.get(0);
 
-    System.out.println("Test case 4: Calculate length categories: \n\t" +
+    System.out.println("Test case 2: Test only kids: \n\t" +
         "Expected result:" + expectedResult + " \n\t" +
         "Actual result: " + actualResult);
     if (arrayLists.contains(expectedResult))
@@ -71,7 +71,7 @@ public class PeopleWeightTest {
     ArrayList<String> arrayLists = categories.generateWeightAverage(agesWeights);
     String actualResult = arrayLists.get(1);
 
-    System.out.println("Test case 4: Calculate length categories: \n\t" +
+    System.out.println("Test case 3: Test only teens: \n\t" +
         "Expected result:" + expectedResult + " \n\t" +
         "Actual result: " + actualResult);
     if (arrayLists.contains(expectedResult))
@@ -94,7 +94,7 @@ public class PeopleWeightTest {
     ArrayList<String> arrayLists = categories.generateWeightAverage(agesWeights);
     String actualResult = arrayLists.get(2);
 
-    System.out.println("Test case 4: Calculate length categories: \n\t" +
+    System.out.println("Test case 4: Test only adults: \n\t" +
         "Expected result:" + expectedResult + " \n\t" +
         "Actual result: " + actualResult);
     if (arrayLists.contains(expectedResult))
@@ -105,7 +105,7 @@ public class PeopleWeightTest {
 
   public static void generateWeightAverage_OnlyOldest() {
     PeopleWeight categories = new PeopleWeight();
-    String expectedResult = "Senior 60 - ... average weight: 78.25";
+    String expectedResult = "Seniors 60 - ... average weight: 78.25";
     double[][] agesWeights =
         {
             {80, 42.0},
@@ -117,7 +117,7 @@ public class PeopleWeightTest {
     ArrayList<String> arrayLists = categories.generateWeightAverage(agesWeights);
     String actualResult = arrayLists.get(3);
 
-    System.out.println("Test case 4: Calculate length categories: \n\t" +
+    System.out.println("Test case 5: Test only seniors: \n\t" +
         "Expected result:" + expectedResult + " \n\t" +
         "Actual result: " + actualResult);
     if (arrayLists.contains(expectedResult))
