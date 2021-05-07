@@ -105,7 +105,7 @@ public class PeopleWeightTest {
 
   public static void generateWeightAverage_OnlyOldest() {
     PeopleWeight categories = new PeopleWeight();
-    String expectedResult = "Oldest 60 - ... average weight: 78.25";
+    String expectedResult = "Senior 60 - ... average weight: 78.25";
     double[][] agesWeights =
         {
             {80, 42.0},
