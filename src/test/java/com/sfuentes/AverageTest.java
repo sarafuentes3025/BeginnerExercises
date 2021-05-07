@@ -17,7 +17,7 @@ public class AverageTest {
   void calculateAverageStudent_decimals() {
     Average decimal = new Average();
     double[] grades = {9, 9, 9, 9, 9, 9, 5.5};
-    
+
     assertEquals(decimal.calculateAverageStudent(grades), 8.5);
   }
 }
