@@ -10,28 +10,25 @@ public class OrangeShopTest {
   void calculateFifteenPercentage_integerNumber() {
     OrangeShop client = new OrangeShop();
     int number = 100;
-    double expectedResult = 15;
 
-    assertEquals(expectedResult, client.calculateFifteenPercentage(number));
+    assertEquals(15, client.calculateFifteenPercentage(number));
   }
 
   @Test
   void calculateFifteenPercentage_decimalNumber() {
     OrangeShop client = new OrangeShop();
     double number = 500.50;
-    double expectedResult = 75.075;
 
-    assertEquals(expectedResult, client.calculateFifteenPercentage(number));
+    assertEquals(75.075, client.calculateFifteenPercentage(number));
   }
 
   @Test
-  void calculateCustomerPayment_tenKilos() {
+  void calculateCustomerPayment_lessElevenKilos() {
     OrangeShop client = new OrangeShop();
     double kilos = 10;
     double pricePerKilo = 10;
-    double expectedResult = 100.0;
 
-    assertEquals(expectedResult, client.calculateCustomerPayment(pricePerKilo, kilos));
+    assertEquals(100.0, client.calculateCustomerPayment(pricePerKilo, kilos));
   }
 
   @Test
@@ -39,9 +36,8 @@ public class OrangeShopTest {
     OrangeShop client = new OrangeShop();
     double kilos = 11;
     double pricePerKilo = 10;
-    double expectedResult = 93.5;
 
-    assertEquals(expectedResult, client.calculateCustomerPayment(pricePerKilo, kilos));
+    assertEquals(93.5, client.calculateCustomerPayment(pricePerKilo, kilos));
   }
 
   @Test
@@ -49,9 +45,8 @@ public class OrangeShopTest {
     OrangeShop client = new OrangeShop();
     double[] kilos = {10, 10, 10, 10};
     double pricePerKilo = 10;
-    double expectedResult = 400;
 
-    assertEquals(expectedResult, client.calculateStoreSales(pricePerKilo, kilos));
+    assertEquals(400, client.calculateStoreSales(pricePerKilo, kilos));
   }
 
   @Test
@@ -59,9 +54,8 @@ public class OrangeShopTest {
     OrangeShop client = new OrangeShop();
     double[] kilos = {100, 12, 20};
     double pricePerKilo = 10;
-    double expectedResult = 1122;
 
-    assertEquals(expectedResult, client.calculateStoreSales(pricePerKilo, kilos));
+    assertEquals(1122, client.calculateStoreSales(pricePerKilo, kilos));
   }
 
   @Test
@@ -69,9 +63,8 @@ public class OrangeShopTest {
     OrangeShop client = new OrangeShop();
     double[] kilos = {1, 12, 10, 20, 100};
     double pricePerKilo = 10;
-    double expectedResult = 1232;
 
-    assertEquals(expectedResult, client.calculateStoreSales(pricePerKilo, kilos));
+    assertEquals(1232, client.calculateStoreSales(pricePerKilo, kilos));
   }
 
   @Test
@@ -79,9 +72,7 @@ public class OrangeShopTest {
     OrangeShop client = new OrangeShop();
     double[] kilos = {0, 0, 0, 0, 0};
     double pricePerKilo = 10;
-    double expectedResult = 0.0;
 
-    assertEquals(expectedResult, client.calculateStoreSales(pricePerKilo, kilos));
+    assertEquals(0.0, client.calculateStoreSales(pricePerKilo, kilos));
   }
-
 }
