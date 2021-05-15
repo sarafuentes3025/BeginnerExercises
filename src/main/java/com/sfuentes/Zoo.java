@@ -1,27 +1,32 @@
 package com.sfuentes;
 
+import java.util.HashMap;
+
 public class Zoo {
 
-  public String calculatePercentage(int[] agesAnimals) {
-    double countBetweenZeroAndOne = 0;
-    double countLessThanThree = 0;
-    double countGreaterThanOrEqualToThree = 0;
+  public HashMap<String, Integer> calculatePercentage(int[] animalAges) {
 
-    for (int ageAnimal : agesAnimals) {
+    HashMap<String, Integer> map = new HashMap<>();
+
+    double betweenZeroAndOneCount = 0;
+    double lessThanThreeCount = 0;
+    double greaterThanOrEqualToThreeCount = 0;
+
+    for (int ageAnimal : animalAges) {
       if (ageAnimal <= 1) {
-        countBetweenZeroAndOne++;
+        betweenZeroAndOneCount++;
       } else if (ageAnimal < 3) {
-        countLessThanThree++;
+        lessThanThreeCount++;
       } else {
-        countGreaterThanOrEqualToThree++;
+        greaterThanOrEqualToThreeCount++;
       }
     }
 
-    int percentageBetweenZeroAndOne = (int) Math.round((countBetweenZeroAndOne / agesAnimals.length) * 100);
-    int percentageLessThanThree = (int) Math.round((countLessThanThree / agesAnimals.length) * 100);
-    int percentageGreaterThanOrEqualToThree = (int) Math.round((countGreaterThanOrEqualToThree / agesAnimals.length) * 100);
+    map.put("1.Category 0-1: ", (int) Math.round((betweenZeroAndOneCount / animalAges.length) * 100));
+    map.put("2.Category 1-3: ", (int) Math.round((lessThanThreeCount / animalAges.length) * 100));
+    map.put("3.Category 3 or more: ", (int) Math.round((greaterThanOrEqualToThreeCount / animalAges.length) * 100));
 
-    return "1.Category 0-1: " + percentageBetweenZeroAndOne + "%, 2.Category 1-3: " + percentageLessThanThree + "%, 3.Category 3 or more: " + percentageGreaterThanOrEqualToThree + "%";
+    return map;
   }
 
 }
