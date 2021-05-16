@@ -1,12 +1,13 @@
 package com.sfuentes;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Zoo {
 
-  public HashMap<String, Integer> calculatePercentage(int[] animalAges) {
+  public Map<String, Integer> calculatePercentage(int[] animalAges) {
 
-    HashMap<String, Integer> map = new HashMap<>();
+    Map<String, Integer> map = new HashMap<>();
 
     double betweenZeroAndOneCount = 0;
     double lessThanThreeCount = 0;
