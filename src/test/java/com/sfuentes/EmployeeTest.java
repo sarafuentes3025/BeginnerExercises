@@ -14,13 +14,11 @@ public class EmployeeTest {
       Employee test = new Employee(1, sales);
     });
 
-    String expectedMessage = "Incorrect amount of sales";
-
-    assertEquals(exception.getMessage(), expectedMessage);
+    assertEquals(exception.getMessage(), "Incorrect amount of sales");
   }
 
   @Test
-  void calculateSalesBonus_IntegerSales_Equals() {
+  void calculateSalesBonus_IntegerSales_BonusIsCorrect() {
     double[] sales = {100, 100, 100};
     Employee test = new Employee(1, sales);
 
@@ -28,7 +26,7 @@ public class EmployeeTest {
   }
 
   @Test
-  void calculateSalesBonus_DecimalSales_Equals() {
+  void calculateSalesBonus_SalesWithDecimals_BonusIsCorrect() {
     double[] sales = {5_000.90, 4_050.78, 4_449.80};
     Employee test = new Employee(1, sales);
 
@@ -36,7 +34,7 @@ public class EmployeeTest {
   }
 
   @Test
-  void calculateSalesBonus_ZeroSales_Equals() {
+  void calculateSalesBonus_NoSales_NoBonus() {
     double[] sales = {0, 0, 0};
     Employee test = new Employee(1, sales);
 
@@ -44,7 +42,7 @@ public class EmployeeTest {
   }
 
   @Test
-  void calculateNetSalary_IntegerSales_Equals() {
+  void calculateNetSalary_IntegerSales_BonusIsCorrect() {
     double[] sales = {100, 100, 100};
     Employee test = new Employee(1, sales);
 
@@ -52,7 +50,7 @@ public class EmployeeTest {
   }
 
   @Test
-  void calculateNetSalary_DecimalSales_Equals() {
+  void calculateNetSalary_SalesWithDecimals_SalaryIsCorrect() {
     double[] sales = {5000.90, 4050.78, 4449.80};
     Employee test = new Employee(1, sales);
 
@@ -60,7 +58,7 @@ public class EmployeeTest {
   }
 
   @Test
-  void calculateNetSalary_ZeroSales_Equals() {
+  void calculateNetSalary_NoSales_OnlyBaseSalary() {
     double[] sales = {0, 0, 0};
     Employee test = new Employee(1, sales);
 
