@@ -16,7 +16,7 @@ public class EmployeeTest {
 
     String expectedMessage = "Incorrect amount of sales";
 
-    assertTrue(exception.getMessage().equals(expectedMessage));
+    assertEquals(exception.getMessage(), expectedMessage);
   }
 
   @Test
