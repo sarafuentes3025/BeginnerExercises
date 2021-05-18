@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class EmployeeTest {
 
   @Test
-  void test_exceptionIncorrectAmountOfSales() {
+  void amountSales_InvalidAmount_ExceptionThrown() {
     double[] sales = {100.00, 100.00, 100.00, 100.00};
 
     Exception exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -15,70 +15,55 @@ public class EmployeeTest {
     });
 
     String expectedMessage = "Incorrect amount of sales";
-    String actualMessage = exception.getMessage();
 
-    assertTrue(actualMessage.contains(expectedMessage));
+    assertTrue(exception.getMessage().contains(expectedMessage));
   }
 
   @Test
-  void calculateSumSalary_integer() {
+  void calculateSalesBonus_IntegerSales_Equals() {
     double[] sales = {100.00, 100.00, 100.00};
     Employee test = new Employee(1, sales);
-    double expected = 30.00;
-    double actual = test.calculateSumSalary();
 
-    assertEquals(expected, actual);
+    assertEquals(30, test.calculateSalesBonus());
   }
 
   @Test
-  void calculateSumSalary_decimal() {
+  void calculateSalesBonus_DecimalSales_Equals() {
+    double[] sales = {5_000.90, 4_050.78, 4_449.80};
+    Employee test = new Employee(1, sales);
+
+    assertEquals(1350.148, test.calculateSalesBonus());
+  }
+
+  @Test
+  void calculateSalesBonus_ZeroSales_Equals() {
+    double[] sales = {0, 0, 0};
+    Employee test = new Employee(1, sales);
+
+    assertEquals(0, test.calculateSalesBonus());
+  }
+
+  @Test
+  void calculateNetSalary_IntegerSales_Equals() {
+    double[] sales = {100, 100, 100};
+    Employee test = new Employee(1, sales);
+
+    assertEquals(10030, test.calculateNetSalary());
+  }
+
+  @Test
+  void calculateNetSalary_DecimalSales_Equals() {
     double[] sales = {5000.90, 4050.78, 4449.80};
     Employee test = new Employee(1, sales);
-    double expected = 1350.148;
-    double actual = test.calculateSumSalary();
 
-    assertEquals(expected, actual);
+    assertEquals(11350.148, test.calculateNetSalary());
   }
 
   @Test
-  void calculateSumSalary_zero() {
+  void calculateNetSalary_ZeroSales_Equals() {
     double[] sales = {0.0, 0.0, 0.0};
     Employee test = new Employee(1, sales);
-    double expected = 0.0;
-    double actual = test.calculateSumSalary();
 
-    assertEquals(expected, actual);
+    assertEquals(10_000, test.calculateNetSalary());
   }
-
-  @Test
-  void calculateNetSalary_integer() {
-    double[] sales = {100.00, 100.00, 100.00};
-    Employee test = new Employee(1, sales);
-    double expected = 10030.00;
-    double actual = test.calculateNetSalary();
-
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  void calculateNetSalary_Decimal() {
-    double[] sales = {5000.90, 4050.78, 4449.80};
-    Employee test = new Employee(1, sales);
-    double expected = 11350.148;
-    double actual = test.calculateNetSalary();
-
-    assertEquals(expected, actual);
-  }
-
-  @Test
-  void calculateNetSalary_zero() {
-    double[] sales = {0.0, 0.0, 0.0};
-    Employee test = new Employee(1, sales);
-    double expected = 10000.0;
-    double actual = test.calculateNetSalary();
-
-    assertEquals(expected, actual);
-  }
-
-
 }
