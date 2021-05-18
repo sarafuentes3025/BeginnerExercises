@@ -17,11 +17,11 @@ public class Employee {
   }
 
   public double calculateSalesBonus() {
-    double sumSales = 0.0;
+    double sumSales = 0;
 
-    for (double listSale : listSales) {
+    for (double listSale : listSales)
       sumSales += listSale;
-    }
+
     return sumSales * bonusPercentage / 100;
   }
 

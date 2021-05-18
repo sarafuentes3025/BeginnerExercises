@@ -8,7 +8,7 @@ public class EmployeeTest {
 
   @Test
   void amountSales_InvalidAmount_ExceptionThrown() {
-    double[] sales = {100.00, 100.00, 100.00, 100.00};
+    double[] sales = {100, 100, 100, 100};
 
     Exception exception = assertThrows(IllegalArgumentException.class, () -> {
       Employee test = new Employee(1, sales);
@@ -16,12 +16,12 @@ public class EmployeeTest {
 
     String expectedMessage = "Incorrect amount of sales";
 
-    assertTrue(exception.getMessage().contains(expectedMessage));
+    assertTrue(exception.getMessage().equals(expectedMessage));
   }
 
   @Test
   void calculateSalesBonus_IntegerSales_Equals() {
-    double[] sales = {100.00, 100.00, 100.00};
+    double[] sales = {100, 100, 100};
     Employee test = new Employee(1, sales);
 
     assertEquals(30, test.calculateSalesBonus());
@@ -61,7 +61,7 @@ public class EmployeeTest {
 
   @Test
   void calculateNetSalary_ZeroSales_Equals() {
-    double[] sales = {0.0, 0.0, 0.0};
+    double[] sales = {0, 0, 0};
     Employee test = new Employee(1, sales);
 
     assertEquals(10_000, test.calculateNetSalary());
