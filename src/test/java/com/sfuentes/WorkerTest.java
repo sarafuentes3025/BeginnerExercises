@@ -15,13 +15,13 @@ public class WorkerTest {
   @Test
   void calculateSalary_FortyHours_TwoHundredPerHour() {
     Worker test = new Worker(1, 40);
-    assertEquals(8000, test.calculateSalary());
+    assertEquals(8_000, test.calculateSalary());
   }
 
   @Test
   void calculateSalary_FortyOneHours_OnlyOneHourForTwoHundredAndFifty() {
     Worker test = new Worker(1, 41);
-    assertEquals(8250, test.calculateSalary());
+    assertEquals(8_250, test.calculateSalary());
   }
 
   @Test

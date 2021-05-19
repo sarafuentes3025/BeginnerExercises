@@ -15,8 +15,7 @@ public class Worker {
     if (hours <= 40)
       return hours * 200;
     else {
-      hours -= 40;
-      return 8_000 + hours * 250;
+      return 8_000 + (hours - 40) * 250;
     }
   }
 }
