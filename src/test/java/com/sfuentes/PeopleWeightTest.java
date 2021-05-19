@@ -19,7 +19,7 @@ public class PeopleWeightTest {
             {12, 25.5}
         };
 
-    assertEquals(categories.generateWeightAverage(agesWeight).size(),4);
+    assertEquals(categories.generateWeightAverage(agesWeight).size(), 4);
   }
 
   @Test
@@ -36,7 +36,7 @@ public class PeopleWeightTest {
         };
     ArrayList<String> arrayLists = categories.generateWeightAverage(agesWeights);
 
-    assertEquals(expectedResult,arrayLists.get(0));
+    assertEquals(expectedResult, arrayLists.get(0));
   }
 
   @Test
@@ -53,7 +53,7 @@ public class PeopleWeightTest {
         };
     ArrayList<String> arrayLists = categories.generateWeightAverage(agesWeights);
 
-    assertEquals(expectedResult,arrayLists.get(1));
+    assertEquals(expectedResult, arrayLists.get(1));
   }
 
   @Test
@@ -70,7 +70,7 @@ public class PeopleWeightTest {
         };
     ArrayList<String> arrayLists = categories.generateWeightAverage(agesWeights);
 
-    assertEquals(expectedResult,arrayLists.get(2));
+    assertEquals(expectedResult, arrayLists.get(2));
   }
 
   @Test
@@ -87,7 +87,7 @@ public class PeopleWeightTest {
         };
     ArrayList<String> arrayLists = categories.generateWeightAverage(agesWeights);
 
-    assertEquals(expectedResult,arrayLists.get(3));
+    assertEquals(expectedResult, arrayLists.get(3));
   }
 
 }
