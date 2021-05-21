@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class StudentTest {
 
   @Test
-  void sortByWomenAndMen_TenStudents_OnlyWomen() {
+  void getCountByGender_TenStudents_OnlyWomen() {
     String[][] students = {
         {"Daniela", "woman"},
         {"Julia", "woman"},
@@ -27,13 +27,12 @@ public class StudentTest {
     Map<String, Integer> expected = new HashMap<>();
     expected.put("Women: ", 10);
     expected.put("Men: ", 0);
-    Map<String, Integer> actualResult = test.getCountByGender(students);
 
-    assertEquals(expected, actualResult);
+    assertEquals(expected, test.getCountByGender(students));
   }
 
   @Test
-  void sortByWomenAndMen_TenStudents_WomenAndMen() {
+  void getCountByGender_TenStudents_WomenAndMen() {
     String[][] students = {
         {"Daniel", "man"},
         {"Julio", "man"},
@@ -50,13 +49,12 @@ public class StudentTest {
     Map<String, Integer> expected = new HashMap<>();
     expected.put("Women: ", 5);
     expected.put("Men: ", 5);
-    Map<String, Integer> actualResult = test.getCountByGender(students);
 
-    assertEquals(expected, actualResult);
+    assertEquals(expected, test.getCountByGender(students));
   }
 
   @Test
-  void sortByWomenAndMen_TenStudents_OnlyMen() {
+  void getCountByGender_TenStudents_OnlyMen() {
     String[][] students = {
         {"Daniel", "man"},
         {"Julio", "man"},
@@ -73,20 +71,18 @@ public class StudentTest {
     Map<String, Integer> expected = new HashMap<>();
     expected.put("Women: ", 0);
     expected.put("Men: ", 10);
-    Map<String, Integer> actualResult = test.getCountByGender(students);
 
-    assertEquals(expected, actualResult);
+    assertEquals(expected, test.getCountByGender(students));
   }
 
   @Test
-  void sortByWomenAndMen_NoStudents_NoWomenAndNoMen() {
+  void getCountByGender_NoStudents_NoWomenAndNoMen() {
     String[][] students = {};
     Student test = new Student(students);
     Map<String, Integer> expected = new HashMap<>();
     expected.put("Women: ", 0);
     expected.put("Men: ", 0);
-    Map<String, Integer> actualResult = test.getCountByGender(students);
 
-    assertEquals(expected, actualResult);
+    assertEquals(expected, test.getCountByGender(students));
   }
 }
