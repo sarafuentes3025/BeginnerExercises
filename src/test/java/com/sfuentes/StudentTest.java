@@ -27,10 +27,9 @@ public class StudentTest {
     Map<String, Integer> expected = new HashMap<>();
     expected.put("Women: ", 10);
     expected.put("Men: ", 0);
-    Map<String, Integer> actualResult = test.sortByWomenAndMen(students);
+    Map<String, Integer> actualResult = test.getCountByGender(students);
 
-    assertEquals(expected.get("Women: "), actualResult.get("Women: "));
-    assertEquals(expected.get("Men: "), actualResult.get("Men: "));
+    assertEquals(expected, actualResult);
   }
 
   @Test
@@ -51,10 +50,9 @@ public class StudentTest {
     Map<String, Integer> expected = new HashMap<>();
     expected.put("Women: ", 5);
     expected.put("Men: ", 5);
-    Map<String, Integer> actualResult = test.sortByWomenAndMen(students);
+    Map<String, Integer> actualResult = test.getCountByGender(students);
 
-    assertEquals(expected.get("Women: "), actualResult.get("Women: "));
-    assertEquals(expected.get("Men: "), actualResult.get("Men: "));
+    assertEquals(expected, actualResult);
   }
 
   @Test
@@ -75,22 +73,20 @@ public class StudentTest {
     Map<String, Integer> expected = new HashMap<>();
     expected.put("Women: ", 0);
     expected.put("Men: ", 10);
-    Map<String, Integer> actualResult = test.sortByWomenAndMen(students);
+    Map<String, Integer> actualResult = test.getCountByGender(students);
 
-    assertEquals(expected.get("Women: "), actualResult.get("Women: "));
-    assertEquals(expected.get("Men: "), actualResult.get("Men: "));
+    assertEquals(expected, actualResult);
   }
 
   @Test
-  void sortByWomenAndMen_NoStudents_NoWomenAndNineMen() {
+  void sortByWomenAndMen_NoStudents_NoWomenAndNoMen() {
     String[][] students = {};
     Student test = new Student(students);
     Map<String, Integer> expected = new HashMap<>();
     expected.put("Women: ", 0);
     expected.put("Men: ", 0);
-    Map<String, Integer> actualResult = test.sortByWomenAndMen(students);
+    Map<String, Integer> actualResult = test.getCountByGender(students);
 
-    assertEquals(expected.get("Women: "), actualResult.get("Women: "));
-    assertEquals(expected.get("Men: "), actualResult.get("Men: "));
+    assertEquals(expected, actualResult);
   }
 }

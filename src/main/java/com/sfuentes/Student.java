@@ -5,15 +5,15 @@ import java.util.Map;
 
 public class Student {
   String[][] students;
-  Map<String, Integer> categories = new HashMap<>();
-  int menCount;
-  int womanCount;
 
   public Student(String[][] students) {
     this.students = students;
   }
 
-  public Map<String, Integer> sortByWomenAndMen(String[][] students) {
+  public Map<String, Integer> getCountByGender(String[][] students) {
+    Map<String, Integer> categories = new HashMap<>();
+    int menCount = 0;
+    int womanCount = 0;
 
     for (String[] student : students) {
       if ("man".equals(student[1]))
