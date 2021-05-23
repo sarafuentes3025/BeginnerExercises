@@ -30,9 +30,8 @@ public class CarLicensePlate {
         case 3, 4 -> pinkCount++;
         case 5, 6 -> redCount++;
         case 7, 8 -> greenCount++;
-        default -> blueCount++;
+        case 9, 0 -> blueCount++;
       }
-
     }
 
     categories.put("1 or 2 - Yellow ", yellowCount);
