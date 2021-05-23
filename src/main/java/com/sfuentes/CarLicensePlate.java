@@ -10,7 +10,7 @@ public class CarLicensePlate {
     this.licensePlates = licensePlates;
   }
 
-  public Map<String, Integer> getCountOfEachColorByLicensePlate(String[] licensePlates) {
+  public Map<String, Integer> getLicenseCountByColor(String[] licensePlates) {
 
     Map<String, Integer> categories = new HashMap<>();
 
@@ -25,16 +25,14 @@ public class CarLicensePlate {
       String numberOnly = licensePlate.replaceAll("[^0-9]", "");
       int convertToInt = Integer.parseInt(numberOnly.substring(numberOnly.length() - 1));
 
-      if (convertToInt == 1 || convertToInt == 2)
-        yellowCount++;
-      else if (convertToInt == 3 || convertToInt == 4)
-        pinkCount++;
-      else if (convertToInt == 5 || convertToInt == 6)
-        redCount++;
-      else if (convertToInt == 7 || convertToInt == 8)
-        greenCount++;
-      else
-        blueCount++;
+      switch (convertToInt) {
+        case 1, 2 -> yellowCount++;
+        case 3, 4 -> pinkCount++;
+        case 5, 6 -> redCount++;
+        case 7, 8 -> greenCount++;
+        default -> blueCount++;
+      }
+
     }
 
     categories.put("1 or 2 - Yellow ", yellowCount);
