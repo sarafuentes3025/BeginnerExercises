@@ -1,36 +1,38 @@
 package com.sfuentes;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ClubMember {
-  int memberID;
-  Map<Integer, List<Double>> weightPerScale;
+
+  ArrayList<Double> weightPerScale;
   double previousWeight;
 
-  public ClubMember(int memberID, double previousWeight, Map<Integer, List<Double>> weightPerScale) {
+  public ClubMember(double previousWeight, ArrayList<Double> weightPerScale) {
 
-    this.memberID = memberID;
     this.previousWeight = previousWeight;
-    this.weightPerScale = weightPerScale;
+    if (weightPerScale.size() == 10)
+      this.weightPerScale = weightPerScale;
+    else
+      throw new IllegalArgumentException("Incorrect amount of weights");
   }
 
-  public Map<String, Double> getWeightComparison(double previousWeight, Map<Integer, List<Double>> weightPerScale) {
+  public Map<String, Double> getWeightComparison() {
     Map<String, Double> comparison = new HashMap<>();
     double sum = 0.0;
     double average;
 
-    for (double clave : weightPerScale.get(1)) {
+    for (double clave : weightPerScale) {
       sum += clave;
     }
 
-    average = sum / weightPerScale.get(1).size();
+    average = sum / weightPerScale.size();
 
     if (average > previousWeight)
       comparison.put("Gained weight", average - previousWeight);
     else if (average < previousWeight)
-      comparison.put("Under weight", previousWeight - average);
+      comparison.put("Lose weight", previousWeight - average);
     else
       comparison.put("", 0d);
 

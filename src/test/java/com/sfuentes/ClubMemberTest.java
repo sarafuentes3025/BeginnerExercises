@@ -5,40 +5,47 @@ import org.junit.jupiter.api.Test;
 import java.util.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ClubMemberTest {
 
   @Test
+  void weightPerScale_InvalidWeight_ExceptionThrown() {
+    ArrayList<Double> weightPerScale = new ArrayList<>(Arrays.asList(80d, 80d, 80d, 80d, 80d, 80d, 80d, 80d, 80d, 80d, 80d));
+
+    Exception exception = assertThrows(IllegalArgumentException.class, () -> new ClubMember(90, weightPerScale));
+
+    assertEquals(exception.getMessage(), "Incorrect amount of weights");
+  }
+
+  @Test
   void weightPerScale_gainedWeight() {
-    Map<Integer, List<Double>> weightPerScale = new HashMap<>();
-    weightPerScale.put(1, new ArrayList<>(Arrays.asList(80d, 80d, 80d, 80d, 80d, 80d, 80d, 80d, 80d, 80d)));
-    ClubMember test = new ClubMember(1, 70, weightPerScale);
+    ArrayList<Double> weightPerScale = new ArrayList<>(Arrays.asList(80d, 80d, 80d, 80d, 80d, 80d, 80d, 80d, 80d, 80d));
+    ClubMember test = new ClubMember(70, weightPerScale);
     Map<String, Double> expected = new HashMap<>();
     expected.put("Gained weight", 10d);
 
-    assertEquals(expected, test.getWeightComparison(70, weightPerScale));
+    assertEquals(expected, test.getWeightComparison());
   }
 
   @Test
   void weightPerScale_lostWeight() {
-    Map<Integer, List<Double>> weightPerScale = new HashMap<>();
-    weightPerScale.put(1, new ArrayList<>(Arrays.asList(90d, 80d, 90d, 80d, 90d, 80d, 90d, 80d, 90d, 80d)));
-    ClubMember test = new ClubMember(1, 70, weightPerScale);
+    ArrayList<Double> weightPerScale = new ArrayList<>(Arrays.asList(90d, 80d, 90d, 80d, 90d, 80d, 90d, 80d, 90d, 80d));
+    ClubMember test = new ClubMember(100, weightPerScale);
     Map<String, Double> expected = new HashMap<>();
-    expected.put("Under weight", 15d);
+    expected.put("Lose weight", 15d);
 
-    assertEquals(expected, test.getWeightComparison(100, weightPerScale));
+    assertEquals(expected, test.getWeightComparison());
   }
 
   @Test
   void weightPerScale_NoPreviousWeight() {
-    Map<Integer, List<Double>> weightPerScale = new HashMap<>();
-    weightPerScale.put(1, new ArrayList<>(Collections.emptyList()));
-    ClubMember test = new ClubMember(1, 0, weightPerScale);
+    ArrayList<Double> weightPerScale = new ArrayList<>(Arrays.asList(0d, 0d, 0d, 0d, 0d, 0d, 0d, 0d, 0d, 0d));
+    ClubMember test = new ClubMember(0, weightPerScale);
     Map<String, Double> expected = new HashMap<>();
     expected.put("", 0d);
 
-    assertEquals(expected, test.getWeightComparison(0, weightPerScale));
+    assertEquals(expected, test.getWeightComparison());
   }
 
 }
