@@ -21,13 +21,12 @@ public class ClubMember {
   public Map<String, Double> getWeightComparison() {
     Map<String, Double> comparison = new HashMap<>();
     double sum = 0.0;
-    double average;
 
     for (double clave : weightPerScale) {
       sum += clave;
     }
 
-    average = sum / weightPerScale.size();
+    double average = sum / weightPerScale.size();
 
     if (average > previousWeight)
       comparison.put("Gained weight", average - previousWeight);
