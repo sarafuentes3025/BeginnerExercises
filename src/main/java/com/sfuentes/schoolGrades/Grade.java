@@ -6,8 +6,8 @@ public class Grade {
 
   Map<String, Double> nameGrades;
 
-  public Grade(Map<String, Double> nameGrades) {
-    this.nameGrades = nameGrades;
+  public Grade(Map<String, Double> gradesName) {
+    this.nameGrades = gradesName;
   }
 
   public double calculateAverageByGrade() {

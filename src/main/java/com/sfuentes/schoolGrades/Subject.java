@@ -7,8 +7,8 @@ public class Subject {
   String nameSubject;
   ArrayList<Double> scores;
 
-  public Subject(String nameSubject, ArrayList<Double> scores) {
-    this.nameSubject = nameSubject;
+  public Subject(String subjectName, ArrayList<Double> scores) {
+    this.nameSubject = subjectName;
     if (scores.size() == 3)
       this.scores = scores;
     else
