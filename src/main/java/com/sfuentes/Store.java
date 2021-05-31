@@ -15,8 +15,8 @@ public class Store {
   public double getPrice() {
     double totalPrice = 0;
     switch (color.toLowerCase()) {
-      case "red" -> totalPrice = price - (price * .40);
-      case "yellow" -> totalPrice = price - (price * .25);
+      case "red" -> totalPrice = price - price * .40;
+      case "yellow" -> totalPrice = price - price * .25;
       case "white" -> totalPrice = price;
     }
     return totalPrice;
