@@ -23,4 +23,22 @@ public class StoreTest {
     Store test = new Store("Belt", 12d, "White");
     assertEquals(12, test.getPrice());
   }
+
+  @Test
+  void getPrice_redColor_upperCase() {
+    Store test = new Store("Gloves", 10d, "RED");
+    assertEquals(6, test.getPrice());
+  }
+
+  @Test
+  void getPrice_yellowColor_lowerCase() {
+    Store test = new Store("Scarf", 12d, "yellow");
+    assertEquals(9, test.getPrice());
+  }
+
+  @Test
+  void getPrice_whiteColor_lowerCaseAndUpperCase() {
+    Store test = new Store("Socks", 30d, "wHiTe");
+    assertEquals(30, test.getPrice());
+  }
 }
