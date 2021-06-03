@@ -1,20 +1,24 @@
 package com.sfuentes;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class Supermarket {
 
-  Map<String, Double> items;
+  Map<String, Double> cart;
 
-  public Supermarket(Map<String, Double> items) {
-    this.items = items;
+  public Supermarket() {
+    this.cart = new HashMap<>();
   }
 
-  public String getTotalPurchases() {
-    double totalToPay = 0;
-    for (double item : items.values())
-      totalToPay += item;
+  public void addItems(String item, double price) {
+    if (cart.containsKey(item))
+      cart.put(item, cart.get(item) + price);
+    else
+      cart.put(item, price);
+  }
 
-    return "Number of items: " + items.size() + ", Total to pay: " + totalToPay;
+  public double calculateTotal() {
+    return cart.values().stream().mapToDouble(d -> d).sum();
   }
 }

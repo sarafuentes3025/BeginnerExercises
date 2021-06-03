@@ -2,37 +2,42 @@ package com.sfuentes;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SupermarketTest {
 
   @Test
-  void getTotalPurchases_11Items_totalToPay() {
-    Map<String, Double> items = new HashMap<>();
-    items.put("pizza: ", 10d);
-    items.put("juice: ", 2d);
-    items.put("sugar: ", 1d);
-    items.put("chocolate chips: ", .70d);
-    items.put("fish: ", 20d);
-    items.put("cookies: ", 5d);
-    items.put("beans: ", 4d);
-    items.put("milk: ", 2d);
-    items.put("granola: ", 6d);
-    items.put("tea: ", 13d);
-    items.put("deodorant: ", 12d);
-
-    Supermarket test = new Supermarket(items);
-    assertEquals("Number of items: 11, Total to pay: 75.7", test.getTotalPurchases());
+  void calculateTotal_duplicatedItems_integerResult() {
+    Supermarket cart = new Supermarket();
+    cart.addItems("pizza: ", 10d);
+    cart.addItems("pizza: ", 10d);
+    cart.addItems("pizza: ", 10d);
+    cart.addItems("pizza: ", 10d);
+    assertEquals(40, cart.calculateTotal());
   }
 
   @Test
-  void getTotalPurchases_noItems_zeroTotalToPay() {
-    Map<String, Double> items = new HashMap<>();
+  void calculateTotal_differentItems_decimalResult() {
+    Supermarket cart = new Supermarket();
+    cart.addItems("pizza: ", 10.1d);
+    cart.addItems("juice: ", 2d);
+    cart.addItems("sugar: ", 1d);
+    cart.addItems("chocolate chips: ", .1d);
+    cart.addItems("fish: ", 20d);
+    cart.addItems("cookies: ", 5d);
+    cart.addItems("beans: ", 4d);
+    cart.addItems("milk: ", 2d);
+    cart.addItems("granola: ", 6d);
+    cart.addItems("tea: ", 13d);
+    cart.addItems("deodorant: ", 12d);
+    assertEquals(75.2d, cart.calculateTotal());
+  }
 
-    Supermarket test = new Supermarket(items);
-    assertEquals("Number of items: 0, Total to pay: 0.0", test.getTotalPurchases());
+  @Test
+  void calculateTotal_zeroPrice_zeroResult() {
+    Supermarket cart = new Supermarket();
+    cart.addItems("", 0d);
+    cart.addItems("", 0d);
+    assertEquals(0.0d, cart.calculateTotal());
   }
 }
