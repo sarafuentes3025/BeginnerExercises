@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class SupermarketTest {
 
   @Test
-  void calculateTotal_duplicatedItems_integerResult() {
+  void calculateTotal_duplicatedItems_sumAllValues() {
     Supermarket cart = new Supermarket();
     cart.addItems("pizza: ", 10d);
     cart.addItems("pizza: ", 10d);
@@ -17,7 +17,7 @@ public class SupermarketTest {
   }
 
   @Test
-  void calculateTotal_differentItems_decimalResult() {
+  void calculateTotal_differentItems() {
     Supermarket cart = new Supermarket();
     cart.addItems("pizza: ", 10.1d);
     cart.addItems("juice: ", 2d);
