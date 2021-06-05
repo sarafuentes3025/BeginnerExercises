@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TheaterTest {
 
   @Test
-  void getSumAllResultants_categoryOneAgeRangeFiveToFourteen_thirtyFiveDiscount() {
+  void getSubtractionByDiscount_categoryOneAgeRangeFiveToFourteen_thirtyFiveDiscount() {
     ArrayList<Integer> ages = new ArrayList<>(Arrays.asList(5, 6, 7, 8, 9, 10, 11, 12, 13, 14));
     Theater test = new Theater(ages);
 
@@ -18,7 +18,7 @@ public class TheaterTest {
   }
 
   @Test
-  void getSumAllResultants_categoryTwoAgeRangeFifteenToNineteen_twentyFiveDiscount() {
+  void getSubtractionByDiscount_categoryTwoAgeRangeFifteenToNineteen_twentyFiveDiscount() {
     ArrayList<Integer> ages = new ArrayList<>(Arrays.asList(15, 16, 17, 18, 19));
     Theater test = new Theater(ages);
 
@@ -26,7 +26,7 @@ public class TheaterTest {
   }
 
   @Test
-  void getSumAllResultants_categoryThreeAgeRangeTwentyToFortyFive_tenDiscount() {
+  void getSubtractionByDiscount_categoryThreeAgeRangeTwentyToFortyFive_tenDiscount() {
     ArrayList<Integer> ages = new ArrayList<>(Arrays.asList(20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 42, 43, 44, 45));
     Theater test = new Theater(ages);
 
