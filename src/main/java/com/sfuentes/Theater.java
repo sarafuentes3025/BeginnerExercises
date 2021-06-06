@@ -13,20 +13,20 @@ public class Theater {
     this.ages = age;
   }
 
-  public Map<String, Double> getSubtractionByDiscount() {
+  public Map<String, Double> getCategoryByDiscount() {
     double discount1 = 0;
     double discount2 = 0;
     double discount3 = 0;
     double discount4 = 0;
     double discount5 = 0;
     for (int age : ages) {
-      if (age >= 5 & age <= 14)
+      if (age >= 5 && age <= 14)
         discount1 += price * .35;
-      else if (age >= 15 & age <= 19)
+      else if (age >= 15 && age <= 19)
         discount2 += price * .25;
-      else if (age >= 20 & age <= 45)
+      else if (age >= 20 && age <= 45)
         discount3 += price * .10;
-      else if (age >= 46 & age <= 65)
+      else if (age >= 46 && age <= 65)
         discount4 += price * .25;
       else if (age >= 66)
         discount5 += price * .35;
