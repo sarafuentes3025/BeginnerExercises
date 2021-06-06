@@ -1,6 +1,8 @@
 package com.sfuentes;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Theater {
 
@@ -11,20 +13,32 @@ public class Theater {
     this.ages = age;
   }
 
-  public double getSubtractionByDiscount() {
-    double discount = 0;
+  public Map<String, Double> getSubtractionByDiscount() {
+    double discount1 = 0;
+    double discount2 = 0;
+    double discount3 = 0;
+    double discount4 = 0;
+    double discount5 = 0;
     for (int age : ages) {
       if (age >= 5 & age <= 14)
-        discount += price * .35;
+        discount1 += price * .35;
       else if (age >= 15 & age <= 19)
-        discount += price * .25;
+        discount2 += price * .25;
       else if (age >= 20 & age <= 45)
-        discount += price * .10;
+        discount3 += price * .10;
       else if (age >= 46 & age <= 65)
-        discount += price * .25;
+        discount4 += price * .25;
       else if (age >= 66)
-        discount += price * .35;
+        discount5 += price * .35;
     }
-    return discount;
+    Map<String, Double> total = new HashMap<>();
+    total.put("One category", discount1);
+    total.put("Two category", discount2);
+    total.put("Three category", discount3);
+    total.put("Four category", discount4);
+    total.put("Five category", discount5);
+
+    return total;
   }
 }
+
