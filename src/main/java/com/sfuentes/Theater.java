@@ -9,8 +9,8 @@ public class Theater {
   ArrayList<Integer> ages;
   final double price = 20d;
 
-  public Theater(ArrayList<Integer> age) {
-    this.ages = age;
+  public Theater(ArrayList<Integer> ages) {
+    this.ages = ages;
   }
 
   public Map<String, Double> getCategoryByDiscount() {
