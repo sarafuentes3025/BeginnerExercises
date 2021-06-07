@@ -10,14 +10,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TheaterTest {
 
-  List range(int start, int end) {
+  List<Integer> range(int start, int end) {
     return IntStream.rangeClosed(start, end)
         .boxed().collect(Collectors.toList());
   }
 
   @Test
   void getCategoryByDiscount_categoryOneAgeRangeFiveToFourteen_thirtyFiveDiscount() {
-    List<Integer> ages = new ArrayList<>(range(5, 14));
+    List<Integer> ages = range(5, 14);
     Theater test = new Theater(ages);
 
     Map<String, Double> expected = new HashMap<>();
@@ -32,7 +32,7 @@ public class TheaterTest {
 
   @Test
   void getCategoryByDiscount_categoryTwoAgeRangeFifteenToNineteen_twentyFiveDiscount() {
-    List<Integer> ages = new ArrayList<>(range(15, 19));
+    List<Integer> ages = range(15, 19);
     Theater test = new Theater(ages);
 
     Map<String, Double> expected = new HashMap<>();
@@ -47,7 +47,7 @@ public class TheaterTest {
 
   @Test
   void getCategoryByDiscount_categoryThreeAgeRangeTwentyToFortyFive_tenDiscount() {
-    List<Integer> ages = new ArrayList<>(range(20, 45));
+    List<Integer> ages = range(20, 45);
     Theater test = new Theater(ages);
 
     Map<String, Double> expected = new HashMap<>();
@@ -62,7 +62,7 @@ public class TheaterTest {
 
   @Test
   void getCategoryByDiscount_categoryFourAgeRangeFortySixToSixtyFive_twentyFiveDiscount() {
-    List<Integer> ages = new ArrayList<>(range(46, 65));
+    List<Integer> ages = range(46, 65);
     Theater test = new Theater(ages);
 
     Map<String, Double> expected = new HashMap<>();
@@ -77,7 +77,7 @@ public class TheaterTest {
 
   @Test
   void getCategoryByDiscount_categoryFiveAgeGreaterThanSixty_thirtyFiveDiscount() {
-    List<Integer> ages = new ArrayList<>(range(66, 70));
+    List<Integer> ages = range(66, 70);
     Theater test = new Theater(ages);
 
     Map<String, Double> expected = new HashMap<>();
@@ -92,7 +92,7 @@ public class TheaterTest {
 
   @Test
   void getCategoryByDiscount_NoCategoryLessThanFive_NoDiscount() {
-    List<Integer> ages = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4));
+    List<Integer> ages = range(0, 4);
     Theater test = new Theater(ages);
 
     Map<String, Double> expected = new HashMap<>();
