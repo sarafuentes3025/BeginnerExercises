@@ -1,15 +1,15 @@
 package com.sfuentes;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Theater {
 
-  ArrayList<Integer> ages;
+  List<Integer> ages;
   final double price = 20d;
 
-  public Theater(ArrayList<Integer> ages) {
+  public Theater(List<Integer> ages) {
     this.ages = ages;
   }
 
@@ -32,11 +32,11 @@ public class Theater {
         discount5 += price * .35;
     }
     Map<String, Double> total = new HashMap<>();
-    total.put("One category", discount1);
-    total.put("Two category", discount2);
-    total.put("Three category", discount3);
-    total.put("Four category", discount4);
-    total.put("Five category", discount5);
+    total.put("Ages 5-14", discount1);
+    total.put("Ages 15-19", discount2);
+    total.put("Ages 20-45", discount3);
+    total.put("Ages 46-65", discount4);
+    total.put("Ages 66 and more", discount5);
 
     return total;
   }
