@@ -25,6 +25,6 @@ public class Farm {
   }
 
   public double calculateAverageQualityOfHens(List<Hen> hens) {
-    return hens.stream().mapToDouble(this::getQualityOfHen).filter(d -> !Double.isNaN(d)).average().orElse(0.0);
+    return hens.stream().mapToDouble(this::getQualityOfHen).average().orElse(0.0);
   }
 }

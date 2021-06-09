@@ -60,7 +60,7 @@ public class FarmTest {
   }
 
   @Test
-  void getEggPricePerKilo_noQuality_noPesosPerKiloOfEgg() {
+  void getEggPricePerKilo_zeroQuality_zeroPesosPerKiloOfEgg() {
     Farm test = new Farm();
     Hen hen = new Hen(0d, 0d, 0);
 
@@ -120,7 +120,6 @@ public class FarmTest {
     Farm test = new Farm();
 
     List<Hen> hens = new ArrayList<>();
-    hens.add(new Hen(0d, 0d, 0));
 
     assertEquals(0d, test.calculateAverageQualityOfHens(hens));
   }
