@@ -116,7 +116,7 @@ public class FarmTest {
   }
 
   @Test
-  void calculateAverageQualityOfHens_noQuality_noHens() {
+  void calculateAverageQualityOfHens_noHens_noQuality() {
     Farm test = new Farm();
 
     List<Hen> hens = new ArrayList<>();
