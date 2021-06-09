@@ -1,9 +1,9 @@
 package com.sfuentes.farm;
 
 public class Hen {
-  private double henWeight;
-  private double henHeight;
-  private int numberOfEggs;
+  private final double henWeight;
+  private final double henHeight;
+  private final int numberOfEggs;
 
   public Hen(double henWeight, double henHeight, int numberOfEggs) {
     this.henWeight = henWeight;
