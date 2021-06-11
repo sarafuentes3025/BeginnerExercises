@@ -10,7 +10,7 @@ public class VotingTest {
 
   @Test
   void getNumberOfVotesPerSection_allSections_sameNumberOfVotes() {
-    List<String> votes = new ArrayList<>(Arrays.asList("North", "North", "South", "Center", "South", "North", "South", "Center", "Center"));
+    List<String> votes = List.of("North", "North", "South", "Center", "South", "North", "South", "Center", "Center");
 
     Voting test = new Voting(votes);
 
@@ -23,7 +23,7 @@ public class VotingTest {
 
   @Test
   void getNumberOfVotesPerSection_onlyNorthSections() {
-    List<String> votes = new ArrayList<>(Arrays.asList("North", "North", "North"));
+    List<String> votes = List.of("North", "North", "North");
 
     Voting test = new Voting(votes);
 
@@ -36,7 +36,7 @@ public class VotingTest {
 
   @Test
   void getNumberOfVotesPerSection_onlySouthSections() {
-    List<String> votes = new ArrayList<>(Arrays.asList("South", "South", "South"));
+    List<String> votes = List.of("South", "South", "South");
 
     Voting test = new Voting(votes);
 
@@ -49,7 +49,7 @@ public class VotingTest {
 
   @Test
   void getNumberOfVotesPerSection_onlyCenterSections() {
-    List<String> votes = new ArrayList<>(Arrays.asList("Center", "Center", "Center"));
+    List<String> votes = List.of("Center", "Center", "Center");
 
     Voting test = new Voting(votes);
 
@@ -62,7 +62,7 @@ public class VotingTest {
 
   @Test
   void getNumberOfVotesPerSection_noSections() {
-    List<String> votes = new ArrayList<>();
+    List<String> votes = List.of();
 
     Voting test = new Voting(votes);
 
@@ -75,7 +75,7 @@ public class VotingTest {
 
   @Test
   void getMax_onlyCenterValue_centerIsTheLargest() {
-    List<String> votes = new ArrayList<>(Arrays.asList("Center", "Center", "Center", "Center"));
+    List<String> votes = List.of("Center", "Center", "Center", "Center");
 
     Voting test = new Voting(votes);
 
@@ -87,7 +87,7 @@ public class VotingTest {
 
   @Test
   void getMax_onlySouthValue_southIsTheLargest() {
-    List<String> votes = new ArrayList<>(Arrays.asList("south", "south", "south", "south"));
+    List<String> votes = List.of("south", "south", "south", "south");
 
     Voting test = new Voting(votes);
 
@@ -99,7 +99,7 @@ public class VotingTest {
 
   @Test
   void getMax_onlyNorthValue_northIsTheLargest() {
-    List<String> votes = new ArrayList<>(Arrays.asList("North", "North", "North", "North"));
+    List<String> votes = List.of("North", "North", "North", "North");
 
     Voting test = new Voting(votes);
 
@@ -112,7 +112,7 @@ public class VotingTest {
 
   @Test
   void getMax_allSection_centerIsTheLargest() {
-    List<String> votes = new ArrayList<>(Arrays.asList("North", "Center", "Center", "south"));
+    List<String> votes = List.of("North", "Center", "Center", "south");
 
     Voting test = new Voting(votes);
 
@@ -124,7 +124,7 @@ public class VotingTest {
 
   @Test
   void getMax_allSection_northIsTheLargest() {
-    List<String> votes = new ArrayList<>(Arrays.asList("north", "North", "North", "Center", "south"));
+    List<String> votes = List.of("north", "North", "North", "Center", "south");
 
     Voting test = new Voting(votes);
 
@@ -136,7 +136,7 @@ public class VotingTest {
 
   @Test
   void getMax_allSection_southIsTheLargest() {
-    List<String> votes = new ArrayList<>(Arrays.asList("south", "south", "south", "Center", "North"));
+    List<String> votes = List.of("south", "south", "south", "Center", "North");
 
     Voting test = new Voting(votes);
 
@@ -148,7 +148,7 @@ public class VotingTest {
 
   @Test
   void getMax_allSection_sameIsTheLargest() {
-    List<String> votes = new ArrayList<>(Arrays.asList("North", "North", "South", "Center", "South", "North", "South", "Center", "Center"));
+    List<String> votes = List.of("North", "North", "South", "Center", "South", "North", "South", "Center", "Center");
 
     Voting test = new Voting(votes);
 
