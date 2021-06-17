@@ -20,7 +20,7 @@ public class StationeryShopTest {
   }
 
   @Test
-  void verifyRequest_duplicateOffSetRequestsThanFit_Accepted() {
+  void verifyRequest_duplicateOffSetRequestsThatFit_Accepted() {
     StationeryShop test = new StationeryShop();
     assertTrue(test.addRequest(new Request("offset", 1_000)));
     assertTrue(test.addRequest(new Request("offset", 1_000)));
@@ -35,7 +35,7 @@ public class StationeryShopTest {
   }
 
   @Test
-  void verifyRequest_duplicateStandardRequestsThanFit_Accepted() {
+  void verifyRequest_duplicateStandardRequestsThatFit_Accepted() {
     StationeryShop test = new StationeryShop();
     assertTrue(test.addRequest(new Request("standard", 10_000)));
     assertTrue(test.addRequest(new Request("standard", 10_000)));
@@ -45,21 +45,21 @@ public class StationeryShopTest {
   }
 
   @Test
-  void verifyRequest_differentOffSetRequestsThanFit_Accepted() {
+  void verifyRequest_differentOffSetRequestsThatFit_Accepted() {
     StationeryShop test = new StationeryShop();
     assertTrue(test.addRequest(new Request("offset", 9_000)));
     assertTrue(test.addRequest(new Request("offset", 1_000)));
   }
 
   @Test
-  void verifyRequest_differentStandardRequestsThanFit_Accepted() {
+  void verifyRequest_differentStandardRequestsThatFit_Accepted() {
     StationeryShop test = new StationeryShop();
     assertTrue(test.addRequest(new Request("standard", 48_000)));
     assertTrue(test.addRequest(new Request("standard", 2_000)));
   }
 
   @Test
-  void verifyRequest_multipleStandardAndOffsetRequestsThanFit_Accepted() {
+  void verifyRequest_multipleStandardAndOffsetRequestsThatFit_Accepted() {
     StationeryShop test = new StationeryShop();
     assertTrue(test.addRequest(new Request("standard", 20_000)));
     assertTrue(test.addRequest(new Request("standard", 10_000)));
@@ -71,7 +71,7 @@ public class StationeryShopTest {
   }
 
   @Test
-  void verifyRequest_standardAndOffsetRequestsThanFit_Accepted() {
+  void verifyRequest_standardAndOffsetRequestsThatFit_Accepted() {
     StationeryShop test = new StationeryShop();
     assertTrue(test.addRequest(new Request("standard", 50_000)));
     assertTrue(test.addRequest(new Request("offset", 10_000)));
@@ -85,7 +85,7 @@ public class StationeryShopTest {
   }
 
   @Test
-  void verifyRequest_StandardAndOffsetRequestsInUpperCaseThanFit_Accepted() {
+  void verifyRequest_StandardAndOffsetRequestsInUpperCaseThatFit_Accepted() {
     StationeryShop test = new StationeryShop();
     assertTrue(test.addRequest(new Request("STANDARD", 1)));
     assertTrue(test.addRequest(new Request("STANDARD", 1)));
