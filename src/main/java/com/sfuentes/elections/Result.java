@@ -1,51 +1,52 @@
-package com.sfuentes;
+package com.sfuentes.elections;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class GovernmentElections {
+public class Result {
 
-  List<String> votes;
+  private final List<Vote> votes;
 
-  public GovernmentElections(List<String> votes){
+  public Result(List<Vote> votes) {
     this.votes = votes;
   }
 
-  public Map<String, Integer> getNumberOfVotesPerGovernor() {
+  private Map<String, Integer> countVotes() {
     int firstCandidateCount = 0;
     int secondCandidateCount = 0;
     int thirdCandidateCount = 0;
-    Map<String, Integer> governors = new HashMap<>();
-    for (String vote : votes) {
+    Map<String, Integer> candidates = new HashMap<>();
+    for (Vote vote : votes) {
 
-      switch (vote.toLowerCase()) {
+      switch (vote.getNameCandidate().toLowerCase()) {
         case "mauricio" -> firstCandidateCount++;
         case "joaquin" -> secondCandidateCount++;
         case "rodrigo" -> thirdCandidateCount++;
       }
     }
-    governors.put("Mauricio: ", firstCandidateCount);
-    governors.put("Joaquin: ", secondCandidateCount);
-    governors.put("Rodrigo: ", thirdCandidateCount);
+    candidates.put("Mauricio: ", firstCandidateCount);
+    candidates.put("Joaquin: ", secondCandidateCount);
+    candidates.put("Rodrigo: ", thirdCandidateCount);
 
-    return governors;
+    return candidates;
   }
 
   public Map<String, Integer> getWinningCandidate() {
     Map<String, Integer> total = new HashMap<>();
     int maxValue = 0;
     String maxKey = "";
-    for (Map.Entry<String, Integer> section : getNumberOfVotesPerGovernor().entrySet()) {
+    for (Map.Entry<String, Integer> section : countVotes().entrySet()) {
       if (section.getValue() > maxValue) {
         maxValue = section.getValue();
         maxKey = section.getKey();
       }
     }
-
     total.put(maxKey, maxValue);
 
     return total;
   }
-
 }
+
+
+
