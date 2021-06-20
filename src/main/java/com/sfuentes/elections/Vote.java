@@ -2,13 +2,13 @@ package com.sfuentes.elections;
 
 public class Vote {
 
-  private final String nameCandidate;
+  private final String candidateName;
 
   public Vote(String vote) {
-    this.nameCandidate = vote;
+    this.candidateName = vote;
   }
 
-  public String getNameCandidate() {
-    return nameCandidate;
+  public String getCandidateName() {
+    return candidateName;
   }
 }
