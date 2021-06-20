@@ -7,9 +7,15 @@ import java.util.Map;
 public class GovernmentElections {
 
   private final List<Vote> votes;
+  String winner;
+  int numVotes;
 
   public GovernmentElections(List<Vote> votes) {
-    this.votes = votes;
+    if (votes.size() >= 1)
+      this.votes = votes;
+    else
+      throw new IllegalArgumentException("Error, the list is empty");
+
   }
 
   private Map<String, Integer> countVotes() {
@@ -33,7 +39,7 @@ public class GovernmentElections {
   }
 
   public ElectionResults getWinningCandidate() {
-    ElectionResults results = new ElectionResults();
+    ElectionResults results = new ElectionResults(winner, numVotes);
     GovernmentElections elections = new GovernmentElections(votes);
 
     for (Map.Entry<String, Integer> section : elections.countVotes().entrySet()) {
