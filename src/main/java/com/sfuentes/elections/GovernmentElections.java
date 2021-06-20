@@ -12,7 +12,7 @@ public class GovernmentElections {
     this.votes = votes;
   }
 
-  public Map<String, Integer> countVotes() {
+  private Map<String, Integer> countVotes() {
     int firstCandidateCount = 0;
     int secondCandidateCount = 0;
     int thirdCandidateCount = 0;
@@ -30,6 +30,19 @@ public class GovernmentElections {
     candidates.put("Rodrigo", thirdCandidateCount);
 
     return candidates;
+  }
+
+  public ElectionResults getWinningCandidate() {
+    ElectionResults results = new ElectionResults();
+    GovernmentElections elections = new GovernmentElections(votes);
+
+    for (Map.Entry<String, Integer> section : elections.countVotes().entrySet()) {
+      if (section.getValue() > results.numVotes) {
+        results.numVotes = section.getValue();
+        results.winner = section.getKey();
+      }
+    }
+    return results;
   }
 }
 
