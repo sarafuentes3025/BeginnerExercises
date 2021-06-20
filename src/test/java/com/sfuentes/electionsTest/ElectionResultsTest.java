@@ -7,8 +7,9 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
-public class GovernmentElectionsTest {
+public class ElectionResultsTest {
 
   @Test
   void getWinningCandidate_allCandidates_rodrigoIsTheWinner() {
@@ -16,8 +17,8 @@ public class GovernmentElectionsTest {
 
     ElectionResults test = new ElectionResults();
 
-    assertEquals("Rodrigo", test.getWinningCandidate(votes));
-    assertEquals(2, test.getNumVotesCandidate(votes));
+    assertEquals("Rodrigo", test.getWinningCandidate(votes).getWinner());
+    assertEquals(2, test.getWinningCandidate(votes).getNumVotes());
   }
 
   @Test
@@ -26,8 +27,8 @@ public class GovernmentElectionsTest {
 
     ElectionResults test = new ElectionResults();
 
-    assertEquals("Mauricio", test.getWinningCandidate(votes));
-    assertEquals(3, test.getNumVotesCandidate(votes));
+    assertEquals("Mauricio", test.getWinningCandidate(votes).getWinner());
+    assertEquals(3, test.getWinningCandidate(votes).getNumVotes());
   }
 
   @Test
@@ -36,8 +37,8 @@ public class GovernmentElectionsTest {
 
     ElectionResults test = new ElectionResults();
 
-    assertEquals("Joaquin", test.getWinningCandidate(votes));
-    assertEquals(3, test.getNumVotesCandidate(votes));
+    assertEquals("Joaquin", test.getWinningCandidate(votes).getWinner());
+    assertEquals(3, test.getWinningCandidate(votes).getNumVotes());
   }
 
   @Test
@@ -46,8 +47,8 @@ public class GovernmentElectionsTest {
 
     ElectionResults test = new ElectionResults();
 
-    assertEquals("Mauricio", test.getWinningCandidate(votes));
-    assertEquals(3, test.getNumVotesCandidate(votes));
+    assertEquals("Mauricio", test.getWinningCandidate(votes).getWinner());
+    assertEquals(3, test.getWinningCandidate(votes).getNumVotes());
   }
 
   @Test
@@ -56,8 +57,8 @@ public class GovernmentElectionsTest {
 
     ElectionResults test = new ElectionResults();
 
-    assertEquals("Mauricio", test.getWinningCandidate(votes));
-    assertEquals(3, test.getNumVotesCandidate(votes));
+    assertEquals("Mauricio", test.getWinningCandidate(votes).getWinner());
+    assertEquals(3, test.getWinningCandidate(votes).getNumVotes());
   }
 
   @Test
@@ -66,8 +67,8 @@ public class GovernmentElectionsTest {
 
     ElectionResults test = new ElectionResults();
 
-    assertEquals("Joaquin", test.getWinningCandidate(votes));
-    assertEquals(3, test.getNumVotesCandidate(votes));
+    assertEquals("Joaquin", test.getWinningCandidate(votes).getWinner());
+    assertEquals(3, test.getWinningCandidate(votes).getNumVotes());
   }
 
   @Test
@@ -76,8 +77,8 @@ public class GovernmentElectionsTest {
 
     ElectionResults test = new ElectionResults();
 
-    assertEquals("Rodrigo", test.getWinningCandidate(votes));
-    assertEquals(3, test.getNumVotesCandidate(votes));
+    assertEquals("Rodrigo", test.getWinningCandidate(votes).getWinner());
+    assertEquals(3, test.getWinningCandidate(votes).getNumVotes());
   }
 
   @Test
@@ -86,8 +87,8 @@ public class GovernmentElectionsTest {
 
     ElectionResults test = new ElectionResults();
 
-    assertEquals("Rodrigo", test.getWinningCandidate(votes));
-    assertEquals(3, test.getNumVotesCandidate(votes));
+    assertEquals("Rodrigo", test.getWinningCandidate(votes).getWinner());
+    assertEquals(3, test.getWinningCandidate(votes).getNumVotes());
   }
 
   @Test
@@ -96,7 +97,7 @@ public class GovernmentElectionsTest {
 
     ElectionResults test = new ElectionResults();
 
-    assertEquals("", test.getWinningCandidate(votes));
-    assertEquals(0, test.getNumVotesCandidate(votes));
+    assertNull(test.getWinningCandidate(votes).getWinner());
+    assertEquals(0, test.getWinningCandidate(votes).getNumVotes());
   }
 }

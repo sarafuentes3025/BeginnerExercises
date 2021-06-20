@@ -5,30 +5,27 @@ import java.util.Map;
 
 public class ElectionResults {
 
-  String winner = "";
+  String winner;
   int numVotes;
 
-  public String getWinningCandidate(List<Vote> votes) {
+  public ElectionResults getWinningCandidate(List<Vote> votes) {
+    ElectionResults results = new ElectionResults();
     GovernmentElections elections = new GovernmentElections(votes);
 
     for (Map.Entry<String, Integer> section : elections.countVotes().entrySet()) {
-      if (section.getValue() > numVotes) {
-        numVotes = section.getValue();
-        winner = section.getKey();
+      if (section.getValue() > results.numVotes) {
+        results.numVotes = section.getValue();
+        results.winner = section.getKey();
       }
     }
+    return results;
+  }
+
+  public String getWinner() {
     return winner;
   }
 
-  public int getNumVotesCandidate(List<Vote> votes) {
-    GovernmentElections elections = new GovernmentElections(votes);
-
-    for (Map.Entry<String, Integer> section : elections.countVotes().entrySet()) {
-      if (section.getValue() > numVotes) {
-        numVotes = section.getValue();
-        winner = section.getKey();
-      }
-    }
+  public int getNumVotes() {
     return numVotes;
   }
 }
