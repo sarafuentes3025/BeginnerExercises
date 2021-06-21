@@ -1,4 +1,4 @@
-package com.sfuentes.FarmTest;
+package com.sfuentes.farmTest;
 
 import com.sfuentes.farm.Farm;
 import com.sfuentes.farm.Hen;

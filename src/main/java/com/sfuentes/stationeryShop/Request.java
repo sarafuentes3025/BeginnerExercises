@@ -1,4 +1,4 @@
-package com.sfuentes.StationeryShop;
+package com.sfuentes.stationeryShop;
 
 public class Request {
 

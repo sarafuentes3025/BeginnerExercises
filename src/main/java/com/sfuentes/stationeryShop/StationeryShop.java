@@ -1,4 +1,4 @@
-package com.sfuentes.StationeryShop;
+package com.sfuentes.stationeryShop;
 
 import java.util.HashMap;
 import java.util.Map;
