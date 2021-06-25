@@ -1,6 +1,5 @@
-package com.sfuentes.schoolGradesTest;
+package com.sfuentes.schoolGrades;
 
-import com.sfuentes.schoolGrades.School;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

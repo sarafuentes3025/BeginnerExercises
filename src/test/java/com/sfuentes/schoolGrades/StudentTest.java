@@ -1,6 +1,5 @@
-package com.sfuentes.schoolGradesTest;
+package com.sfuentes.schoolGrades;
 
-import com.sfuentes.schoolGrades.Student;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;

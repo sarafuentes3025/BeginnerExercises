@@ -1,8 +1,5 @@
-package com.sfuentes.electionsTest;
+package com.sfuentes.elections;
 
-import com.sfuentes.elections.ElectionResults;
-import com.sfuentes.elections.GovernmentElections;
-import com.sfuentes.elections.Vote;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;

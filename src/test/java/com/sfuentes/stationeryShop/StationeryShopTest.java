@@ -1,7 +1,5 @@
-package com.sfuentes.stationeryShopTest;
+package com.sfuentes.stationeryShop;
 
-import com.sfuentes.stationeryShop.Request;
-import com.sfuentes.stationeryShop.StationeryShop;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;

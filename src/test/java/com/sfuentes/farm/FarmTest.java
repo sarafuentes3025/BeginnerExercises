@@ -1,7 +1,5 @@
-package com.sfuentes.farmTest;
+package com.sfuentes.farm;
 
-import com.sfuentes.farm.Farm;
-import com.sfuentes.farm.Hen;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
