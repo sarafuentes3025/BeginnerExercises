@@ -2,13 +2,15 @@ package com.sfuentes.grocery;
 
 public class Grocery {
 
-  double totalSales;
-  int clientsCount;
+  private double totalSales;
+  private int clientsCount;
 
-  void sale(Client client) {
-    for (Item item : client.getItems()) {
-      totalSales += item.getPrice();
-    }
+  public void sale(Client client) {
+
+    totalSales += client.getItems()
+        .stream()
+        .mapToDouble(Item::getPrice).sum();
+
     clientsCount++;
   }
 
