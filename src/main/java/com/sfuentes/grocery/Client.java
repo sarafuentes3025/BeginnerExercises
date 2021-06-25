@@ -4,11 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Client {
-  private List<Item> items;
+  private final List<Item> items= new ArrayList<>();
 
   public void addItem(Item item) {
-    if (this.items == null)
-      items = new ArrayList<>();
     items.add(new Item(item.getNameItem(), item.getPrice()));
   }
 

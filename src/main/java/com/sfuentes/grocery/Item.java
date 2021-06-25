@@ -2,8 +2,8 @@ package com.sfuentes.grocery;
 
 public class Item {
 
-  String nameItem;
-  double price;
+  private final String nameItem;
+  private final double price;
 
   public Item(String nameItem, double price) {
     this.nameItem = nameItem;
