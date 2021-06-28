@@ -1,24 +1,15 @@
 package com.sfuentes.elections;
 
-import java.util.Objects;
+import lombok.Builder;
+import lombok.Getter;
 
+import java.util.Objects;
+@Getter
+@Builder
 public class ElectionResults {
 
   String winner;
   int numVotes;
-
-  public ElectionResults(String winner, int numVotes) {
-    this.winner = winner;
-    this.numVotes = numVotes;
-  }
-
-  public String getWinner() {
-    return winner;
-  }
-
-  public int getNumVotes() {
-    return numVotes;
-  }
 
   @Override
   public boolean equals(Object o) {
