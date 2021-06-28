@@ -1,26 +1,15 @@
 package com.sfuentes.elections;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.Setter;
 
-import java.util.Objects;
 @Getter
-@Builder
+@Setter
+@AllArgsConstructor
+@EqualsAndHashCode
 public class ElectionResults {
-
-  String winner;
-  int numVotes;
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (!(o instanceof ElectionResults)) return false;
-    ElectionResults that = (ElectionResults) o;
-    return getNumVotes() == that.getNumVotes() && Objects.equals(getWinner(), that.getWinner());
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(getWinner(), getNumVotes());
-  }
+  private String winner;
+  private int numVotes;
 }

@@ -3,7 +3,6 @@ package com.sfuentes.elections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 public class GovernmentElections {
 
   private final List<Vote> votes;
@@ -43,9 +42,9 @@ public class GovernmentElections {
     GovernmentElections elections = new GovernmentElections(votes);
 
     for (Map.Entry<String, Integer> section : elections.countVotes().entrySet()) {
-      if (section.getValue() > results.numVotes) {
-        results.numVotes = section.getValue();
-        results.winner = section.getKey();
+      if (section.getValue() > results.getNumVotes()) {
+        results.setNumVotes(section.getValue());
+        results.setWinner(section.getKey());
       }
     }
     return results;
