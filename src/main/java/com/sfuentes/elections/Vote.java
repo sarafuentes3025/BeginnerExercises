@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @Getter
-@RequiredArgsConstructor class Vote {
+@RequiredArgsConstructor
+public class Vote {
   private final String candidateName;
 }
