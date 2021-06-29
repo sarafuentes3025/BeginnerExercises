@@ -1,12 +1,11 @@
 package com.sfuentes.farm;
 
+import lombok.RequiredArgsConstructor;
+
 import java.util.List;
 
+@RequiredArgsConstructor
 public class Farm {
-
-  public Farm() {
-  }
-
   public double getQualityOfHen(Hen hen) {
     return hen.getHenWeight() * hen.getHenHeight() / hen.getNumberOfEggs();
   }
