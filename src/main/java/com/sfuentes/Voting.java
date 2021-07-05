@@ -1,17 +1,15 @@
 package com.sfuentes;
 
+import lombok.RequiredArgsConstructor;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@RequiredArgsConstructor
 public class Voting {
 
-  List<String> votes;
-
-  public Voting(List<String> votes) {
-    this.votes = votes;
-  }
-
+  private final List<String> votes;
 
   public Map<String, Integer> getNumberOfVotesPerSection() {
     int northCount = 0;
