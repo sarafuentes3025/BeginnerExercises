@@ -1,15 +1,14 @@
 package com.sfuentes;
 
+import lombok.RequiredArgsConstructor;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@RequiredArgsConstructor
 public class Supermarket {
 
-  Map<String, Double> cart;
-
-  public Supermarket() {
-    this.cart = new HashMap<>();
-  }
+  final Map<String, Double> cart= new HashMap<>();
 
   public void addItems(String item, double price) {
     if (cart.containsKey(item))
