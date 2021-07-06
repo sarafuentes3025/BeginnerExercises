@@ -1,14 +1,13 @@
 package com.sfuentes;
 
+import lombok.RequiredArgsConstructor;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@RequiredArgsConstructor
 public class Student {
-  String[][] students;
-
-  public Student(String[][] students) {
-    this.students = students;
-  }
+  public final String[][] students;
 
   public Map<String, Integer> getCountByGender(String[][] students) {
     Map<String, Integer> categories = new HashMap<>();
