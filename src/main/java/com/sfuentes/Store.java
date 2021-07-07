@@ -1,16 +1,13 @@
 package com.sfuentes;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 public class Store {
 
-  String item;
-  double price;
-  String color;
-
-  public Store(String item, double price, String color) {
-    this.item = item;
-    this.price = price;
-    this.color = color;
-  }
+  public final String item;
+  public final double price;
+  public final String color;
 
   public double getPrice() {
     double totalPrice = 0;
