@@ -1,12 +1,11 @@
 package com.sfuentes;
 
+import lombok.RequiredArgsConstructor;
+
+@RequiredArgsConstructor
 public class CountDownByTwos {
 
-  int start;
-
-  public CountDownByTwos(int start) {
-    this.start = start;
-  }
+  private final int start;
 
   public int calculateCountDownByTwos() {
     int count = 0;
