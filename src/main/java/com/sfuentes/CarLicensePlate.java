@@ -1,14 +1,13 @@
 package com.sfuentes;
 
+import lombok.RequiredArgsConstructor;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@RequiredArgsConstructor
 public class CarLicensePlate {
-  String[] licensePlates;
-
-  public CarLicensePlate(String[] licensePlates) {
-    this.licensePlates = licensePlates;
-  }
+  public final String[] licensePlates;
 
   public Map<String, Integer> getLicenseCountByColor(String[] licensePlates) {
 
