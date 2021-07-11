@@ -1,15 +1,13 @@
 package com.sfuentes.stationeryShop;
 
+import lombok.RequiredArgsConstructor;
+
 import java.util.HashMap;
 import java.util.Map;
-
+@RequiredArgsConstructor
 public class StationeryShop {
 
-  private final Map<String, Integer> requests;
-
-  public StationeryShop() {
-    this.requests = new HashMap<>();
-  }
+  private final Map<String, Integer> requests= new HashMap<>();
 
   public boolean verifyRequest(Request request) {
     int max_standard = 50_000;
