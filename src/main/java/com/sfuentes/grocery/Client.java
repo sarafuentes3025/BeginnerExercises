@@ -11,6 +11,7 @@ import java.util.List;
 
 public class Client {
   private final List<Item> items = new ArrayList<>();
+  private final double payment;
 
   public void addItem(Item item) {
     items.add(item);

@@ -1,24 +1,15 @@
 package com.sfuentes.grocery;
 
+import lombok.Getter;
+
+@Getter
 public class Grocery {
 
   private double totalSales;
   private int clientsCount;
 
-  public void sale(Client client) {
-
-    totalSales += client.getItems()
-        .stream()
-        .mapToDouble(Item::getPrice).sum();
-
+  public void processSale(Sale sale) {
+    totalSales += sale.getTotalSale();
     clientsCount++;
-  }
-
-  public double getTotalSales() {
-    return totalSales;
-  }
-
-  public int getClientsCount() {
-    return clientsCount;
   }
 }
