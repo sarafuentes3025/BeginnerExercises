@@ -1,8 +1,10 @@
 package com.sfuentes.census;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 @Getter
+@EqualsAndHashCode
 public class Card {
 
   private final int censusNumber;
