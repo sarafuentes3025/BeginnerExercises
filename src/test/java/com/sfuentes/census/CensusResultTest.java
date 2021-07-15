@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class CensusResultTest {
 
   @Test
-  void getGender_differentGender_ExceptionThrown() {
+  void newCard_differentGender_ExceptionThrown() {
     String gender = "Default";
 
     Exception exception = assertThrows(IllegalArgumentException.class, () ->
@@ -19,7 +19,7 @@ public class CensusResultTest {
   }
 
   @Test
-  void getCivilStatus_differentCivilStatus_ExceptionThrown() {
+  void newCard_differentCivilStatus_ExceptionThrown() {
     String civilStatus = "Free Union";
 
     Exception exception = assertThrows(IllegalArgumentException.class, () ->
