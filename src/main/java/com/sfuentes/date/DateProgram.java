@@ -1,35 +1,35 @@
 package com.sfuentes.date;
 
-import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
-import java.time.DayOfWeek;
+import java.time.DateTimeException;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.Arrays;
 
-@Getter
+@RequiredArgsConstructor
 public class DateProgram {
 
-  private String result;
-  private int weekday;
-  private int dayOfMonth;
-  private int month;
-  private int year;
+  private final String date;
 
-  DayOfWeek dayOfMonthText;
-
-  public void convertDateToWords(String date) {
+  public String convertDateToWords() {
 
     var listOfStr = Arrays.asList(date.split("/"));
-    weekday = Integer.parseInt(listOfStr.get(0));
-    dayOfMonth = Integer.parseInt(listOfStr.get(1));
-    month = Integer.parseInt(listOfStr.get(2));
-    year = Integer.parseInt(listOfStr.get(3));
 
-    var localDate = LocalDate.of(dayOfMonth, month, year);
+    var localDate = LocalDate.of(
+        Integer.parseInt(listOfStr.get(2)),
+        Integer.parseInt(listOfStr.get(1)),
+        Integer.parseInt(listOfStr.get(0)));
 
-    result = localDate.getDayOfWeek()
-        + "/" + NumberInWords.convertNumberToWords(dayOfMonth).toUpperCase()
-        + "/" + localDate.getMonth()
-        + "/" + NumberInWords.convertNumberToWords(year).toUpperCase();
+    String dateText;
+
+    try {
+      dateText = localDate.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL));
+    } catch (DateTimeException e) {
+      throw new DateTimeException("Date is invalid");
+    }
+
+    return dateText;
   }
 }
