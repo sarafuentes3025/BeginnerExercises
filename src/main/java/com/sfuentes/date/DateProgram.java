@@ -6,7 +6,6 @@ import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
-import java.util.Arrays;
 
 @RequiredArgsConstructor
 public class DateProgram {
@@ -15,12 +14,12 @@ public class DateProgram {
 
   public String convertDateToWords() {
 
-    var listOfStr = Arrays.asList(date.split("/"));
+    var listOfStr = date.split("/");
 
     var localDate = LocalDate.of(
-        Integer.parseInt(listOfStr.get(2)),
-        Integer.parseInt(listOfStr.get(1)),
-        Integer.parseInt(listOfStr.get(0)));
+        Integer.parseInt(listOfStr[2]),
+        Integer.parseInt(listOfStr[1]),
+        Integer.parseInt(listOfStr[0]));
 
     String dateText;
 
@@ -28,6 +27,8 @@ public class DateProgram {
       dateText = localDate.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL));
     } catch (DateTimeException e) {
       throw new DateTimeException("Date is invalid");
+    } catch (NumberFormatException e) {
+      throw new NumberFormatException("Date is invalid");
     }
 
     return dateText;
