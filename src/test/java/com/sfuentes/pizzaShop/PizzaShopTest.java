@@ -35,7 +35,7 @@ public class PizzaShopTest {
     PizzaShop pizza = new PizzaShop("small", extraIngredients);
     pizza.calculatePricePizza();
 
-    assertThat(pizza.getTotalPrice()).isEqualTo(150);
+    assertThat(pizza.getTotalPrice()).isEqualTo(90);
   }
 
   @Test
@@ -44,7 +44,7 @@ public class PizzaShopTest {
     PizzaShop pizza = new PizzaShop("small", extraIngredients);
     pizza.calculatePricePizza();
 
-    assertThat(pizza.getTotalPrice()).isEqualTo(175);
+    assertThat(pizza.getTotalPrice()).isEqualTo(105);
   }
 
   @Test
@@ -53,7 +53,7 @@ public class PizzaShopTest {
     PizzaShop pizza = new PizzaShop("medium", extraIngredients);
     pizza.calculatePricePizza();
 
-    assertThat(pizza.getTotalPrice()).isEqualTo(230);
+    assertThat(pizza.getTotalPrice()).isEqualTo(138);
   }
 
   @Test
@@ -62,7 +62,7 @@ public class PizzaShopTest {
     PizzaShop pizza = new PizzaShop("big", extraIngredients);
     pizza.calculatePricePizza();
 
-    assertThat(pizza.getTotalPrice()).isEqualTo(315);
+    assertThat(pizza.getTotalPrice()).isEqualTo(189);
   }
 
   @Test
@@ -71,6 +71,6 @@ public class PizzaShopTest {
     PizzaShop pizza = new PizzaShop("BIG", extraIngredients);
     pizza.calculatePricePizza();
 
-    assertThat(pizza.getTotalPrice()).isEqualTo(315);
+    assertThat(pizza.getTotalPrice()).isEqualTo(189);
   }
 }

@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 public class PizzaShop {
 
   private final String pizzaSize;
-  private final List<String> extraIngredients;
+  private List<String> extraIngredients;
   double totalPrice;
   private final Map<String, Integer> small = Map.of("pizzaPreparationCost", 50, "baseCost", 10);
   private final Map<String, Integer> medium = Map.of("pizzaPreparationCost", 60, "baseCost", 12);
@@ -22,16 +22,21 @@ public class PizzaShop {
     extraIngredients = extraIngredients.stream().map(String::toLowerCase)
         .collect(Collectors.toList());
 
-    if (pizzaSize.contains("small") || pizzaSize.contains("medium") || pizzaSize.contains("big"))
+    if (pizzaSize.equals("small") || pizzaSize.equals("medium") || pizzaSize.equals("big"))
       this.pizzaSize = pizzaSize;
     else
       throw new IllegalArgumentException("Error, date is invalid");
 
-    if (extraIngredients.contains("pickles") || extraIngredients.contains("onion") ||
-        extraIngredients.contains("mushrooms") || extraIngredients.isEmpty())
+    for (String extraIngredient : extraIngredients) {
+      if (extraIngredient.equals("pickles") || extraIngredient.equals("onion") ||
+          extraIngredient.equals("mushrooms"))
+        this.extraIngredients = extraIngredients;
+      else
+        throw new IllegalArgumentException("Error, date is invalid");
+    }
+
+    if (this.extraIngredients == null)
       this.extraIngredients = extraIngredients;
-    else
-      throw new IllegalArgumentException("Error, date is invalid");
   }
 
   public void calculatePricePizza() {
@@ -41,14 +46,13 @@ public class PizzaShop {
       sumIngredients = getExtraIngredients().size() * 10;
     }
 
-    if (getPizzaSize().toLowerCase().contains("small"))
-      totalPrice = small.get("pizzaPreparationCost") + small.get("baseCost");
-    else if (getPizzaSize().contains("medium"))
-      totalPrice = medium.get("pizzaPreparationCost") + medium.get("baseCost");
-    else if (getPizzaSize().contains("big"))
-      totalPrice = big.get("pizzaPreparationCost") + big.get("baseCost");
+    switch (getPizzaSize()) {
+      case "small" -> totalPrice = small.get("pizzaPreparationCost") + small.get("baseCost");
+      case "medium" -> totalPrice = medium.get("pizzaPreparationCost") + medium.get("baseCost");
+      case "big" -> totalPrice = big.get("pizzaPreparationCost") + big.get("baseCost");
+    }
 
     totalPrice += sumIngredients;
-    totalPrice += 1.5 * totalPrice;
+    totalPrice *= 1.5;
   }
 }
