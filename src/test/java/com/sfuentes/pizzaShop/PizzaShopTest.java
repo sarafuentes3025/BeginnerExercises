@@ -26,7 +26,7 @@ public class PizzaShopTest {
     Exception exception = assertThrows(IllegalArgumentException.class, () ->
         new PizzaShop("small", extraIngredients));
 
-    assertThat(exception.getMessage()).isEqualTo("Error, the size is invalid");
+    assertThat(exception.getMessage()).isEqualTo("Error, the ingredient is invalid");
   }
 
   @Test
@@ -35,7 +35,7 @@ public class PizzaShopTest {
     PizzaShop pizza = new PizzaShop("small", extraIngredients);
     pizza.calculatePricePizza();
 
-    assertThat(pizza.getTotalPrice()).isEqualTo(90);
+    assertThat(pizza.getTotalPrice()).isEqualTo(300);
   }
 
   @Test
@@ -44,7 +44,7 @@ public class PizzaShopTest {
     PizzaShop pizza = new PizzaShop("small", extraIngredients);
     pizza.calculatePricePizza();
 
-    assertThat(pizza.getTotalPrice()).isEqualTo(105);
+    assertThat(pizza.getTotalPrice()).isEqualTo(315);
   }
 
   @Test
@@ -53,7 +53,7 @@ public class PizzaShopTest {
     PizzaShop pizza = new PizzaShop("medium", extraIngredients);
     pizza.calculatePricePizza();
 
-    assertThat(pizza.getTotalPrice()).isEqualTo(138);
+    assertThat(pizza.getTotalPrice()).isEqualTo(360);
   }
 
   @Test
@@ -62,7 +62,7 @@ public class PizzaShopTest {
     PizzaShop pizza = new PizzaShop("big", extraIngredients);
     pizza.calculatePricePizza();
 
-    assertThat(pizza.getTotalPrice()).isEqualTo(189);
+    assertThat(pizza.getTotalPrice()).isEqualTo(435);
   }
 
   @Test
@@ -71,6 +71,6 @@ public class PizzaShopTest {
     PizzaShop pizza = new PizzaShop("BIG", extraIngredients);
     pizza.calculatePricePizza();
 
-    assertThat(pizza.getTotalPrice()).isEqualTo(189);
+    assertThat(pizza.getTotalPrice()).isEqualTo(435);
   }
 }

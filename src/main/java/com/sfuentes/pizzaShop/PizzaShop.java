@@ -30,7 +30,7 @@ public class PizzaShop {
           extraIngredient.equals("mushrooms"))
         this.extraIngredients = finalExtraIngredients;
       else
-        throw new IllegalArgumentException("Error, the size is invalid");
+        throw new IllegalArgumentException("Error, the ingredient is invalid");
     });
 
     if (this.extraIngredients == null)
@@ -38,16 +38,11 @@ public class PizzaShop {
   }
 
   public void calculatePricePizza() {
-    SmallPizza small = new SmallPizza();
-    MediumPizza medium = new MediumPizza();
-    BigPizza big = new BigPizza();
 
     switch (getPizzaSize()) {
-
-      case "small" -> totalPrice = small.getPizzaPreparationCost() + small.getBaseCost();
-      case "medium" -> totalPrice = medium.getPizzaPreparationCost() + medium.getBaseCost();
-      case "big" -> totalPrice = big.getPizzaPreparationCost() + big.getBaseCost();
-      default -> throw new IllegalStateException("Unexpected value: " + getPizzaSize());
+      case "small" -> totalPrice = 100 + 100;
+      case "medium" -> totalPrice = 100 + 120;
+      case "big" -> totalPrice = 100 + 160;
     }
 
     totalPrice += getExtraIngredients().size() * 10;
