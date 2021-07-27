@@ -16,7 +16,7 @@ public class PizzaShopTest {
     Exception exception = assertThrows(IllegalArgumentException.class, () ->
         new PizzaShop("tiny", extraIngredients));
 
-    assertThat(exception.getMessage()).isEqualTo("Error, date is invalid");
+    assertThat(exception.getMessage()).isEqualTo("Error, the size is invalid");
   }
 
   @Test
@@ -26,7 +26,7 @@ public class PizzaShopTest {
     Exception exception = assertThrows(IllegalArgumentException.class, () ->
         new PizzaShop("small", extraIngredients));
 
-    assertThat(exception.getMessage()).isEqualTo("Error, date is invalid");
+    assertThat(exception.getMessage()).isEqualTo("Error, the size is invalid");
   }
 
   @Test
