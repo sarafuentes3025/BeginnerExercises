@@ -25,7 +25,7 @@ public class PizzaShop {
       throw new IllegalArgumentException("Error, the size is invalid");
 
     List<String> finalExtraIngredients = extraIngredients;
-    extraIngredients.forEach(extraIngredient ->{
+    extraIngredients.forEach(extraIngredient -> {
       if (extraIngredient.equals("pickles") || extraIngredient.equals("onion") ||
           extraIngredient.equals("mushrooms"))
         this.extraIngredients = finalExtraIngredients;
@@ -42,12 +42,6 @@ public class PizzaShop {
     MediumPizza medium = new MediumPizza();
     BigPizza big = new BigPizza();
 
-    double sumIngredients = 0;
-
-    for (int i = 0; i < getExtraIngredients().size(); i++) {
-      sumIngredients = getExtraIngredients().size() * 10;
-    }
-
     switch (getPizzaSize()) {
 
       case "small" -> totalPrice = small.getPizzaPreparationCost() + small.getBaseCost();
@@ -56,7 +50,7 @@ public class PizzaShop {
       default -> throw new IllegalStateException("Unexpected value: " + getPizzaSize());
     }
 
-    totalPrice += sumIngredients;
+    totalPrice += getExtraIngredients().size() * 10;
     totalPrice *= 1.5;
   }
 }
