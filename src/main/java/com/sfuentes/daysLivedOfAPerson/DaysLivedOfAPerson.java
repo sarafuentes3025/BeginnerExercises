@@ -12,10 +12,10 @@ public class DaysLivedOfAPerson {
   long daysLived;
 
   public long calculateLivedDays(String date) {
-    LocalDate now = LocalDate.now();
+    var now = LocalDate.now();
 
     try {
-      LocalDate birthDate = parse(date, ofPattern("yyyy/MM/dd"));
+      var birthDate = parse(date, ofPattern("yyyy/MM/dd"));
       daysLived = ChronoUnit.DAYS.between(birthDate, now);
     } catch (DateTimeException | NumberFormatException e) {
       throw new IllegalArgumentException("Date is invalid");
