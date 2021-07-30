@@ -1,36 +1,24 @@
 package com.sfuentes.daysLivedOfAPerson;
 
-
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-@Getter
-@RequiredArgsConstructor
+import static java.time.LocalDate.parse;
+import static java.time.format.DateTimeFormatter.ofPattern;
+
 public class DaysLivedOfAPerson {
 
-  private final String date;
   long daysLived;
 
-  public long calculateDaysLived() {
-    var listOfStr = getDate().split("/");
-
+  public long calculateLivedDays(String date) {
     LocalDate now = LocalDate.now();
-    LocalDate birthDate = LocalDate.of(
-        Integer.parseInt(listOfStr[0]),
-        Integer.parseInt(listOfStr[1]),
-        Integer.parseInt(listOfStr[2])
-    );
 
     try {
+      LocalDate birthDate = parse(date, ofPattern("yyyy/MM/dd"));
       daysLived = ChronoUnit.DAYS.between(birthDate, now);
-    } catch (DateTimeException e) {
-      throw new DateTimeException("Date is invalid");
-    } catch (NumberFormatException e) {
-      throw new NumberFormatException("Date is invalid");
+    } catch (DateTimeException | NumberFormatException e) {
+      throw new IllegalArgumentException("Date is invalid");
     }
 
     return daysLived;
